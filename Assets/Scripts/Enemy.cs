@@ -19,15 +19,19 @@ public class Enemy : MonoBehaviour
     public int baseAttack;
     public float moveSpeed;
 
-    // Start is called before the first frame update
-    void Start()
+    public void Knock(Rigidbody2D myRigidBody, float knockTime)
     {
-        
+        StartCoroutine(knockCoroutine(myRigidBody, knockTime));
     }
 
-    // Update is called once per frame
-    void Update()
+    private IEnumerator knockCoroutine(Rigidbody2D myRigidBody, float knockTime)
     {
-        
+        if (myRigidBody != null)
+        {
+            yield return new WaitForSeconds(knockTime);
+            myRigidBody.velocity = Vector2.zero;
+            currentState = EnemyState.idle;
+            myRigidBody.velocity = Vector2.zero;
+        }
     }
 }
