@@ -15,15 +15,18 @@ public class HeartManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("initalising hearts");
         InitHearts();
     }
 
     public void InitHearts()
-    { 
-        for (int i=0; i >heartContainers.initialValue; i++)
+    {
+        Debug.Log("Number of containers to initalise: " + heartContainers.initialValue);
+        for (int i=0; i < heartContainers.initialValue; i++)
         {
-            hearts[i].gameObject.SetActive(true);
+            Debug.Log("initing heart: " + i);
             hearts[i].sprite = fullHeart;
+            hearts[i].gameObject.SetActive(true);
         }
     }
 }
