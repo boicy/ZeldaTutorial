@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df58a7042724d47768df7fabbe9c0abc, type: 3}
-  m_Name: PlayerHealth
+  m_Script: {fileID: 11500000, guid: eed47859252364ff587bd39254df327e, type: 3}
+  m_Name: ReceiveItem
   m_EditorClassIdentifier: 
-  initialValue: 6
+  listeners: []

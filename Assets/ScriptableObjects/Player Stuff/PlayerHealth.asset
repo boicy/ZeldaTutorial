@@ -10,6 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: df58a7042724d47768df7fabbe9c0abc, type: 3}
-  m_Name: TwoHitEnemyHealth
+  m_Name: PlayerHealth
   m_EditorClassIdentifier: 
-  initialValue: 2
+  initialValue: 6
+  RuntimeValue: 6

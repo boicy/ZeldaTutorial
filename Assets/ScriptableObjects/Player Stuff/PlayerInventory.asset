@@ -9,7 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df58a7042724d47768df7fabbe9c0abc, type: 3}
-  m_Name: HeartContainers
+  m_Script: {fileID: 11500000, guid: 853953b4d7af148f3901b36f652d5006, type: 3}
+  m_Name: PlayerInventory
   m_EditorClassIdentifier: 
-  initialValue: 3
+  currentItem: {fileID: 0}
+  items: []
+  numberOfKeys: 0
