@@ -10,7 +10,7 @@ public class CameraMovement : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start () {
-
+        transform.position = new Vector3(target.position.x, target.position.y, transform.position.z);
     }
 
     // smoothing out the camera jerkiness by using LateUpdate
