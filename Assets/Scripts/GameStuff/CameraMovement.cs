@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,9 +9,13 @@ public class CameraMovement : MonoBehaviour {
     public Vector2 maxPosition;
     public Vector2 minPosition;
 
+    public Animator anim;
+
     // Start is called before the first frame update
     void Start () {
+        anim = GetComponent<Animator>();
         transform.position = new Vector3(target.position.x, target.position.y, transform.position.z);
+
     }
 
     // smoothing out the camera jerkiness by using LateUpdate
@@ -24,5 +29,17 @@ public class CameraMovement : MonoBehaviour {
             transform.position = Vector3.Lerp (transform.position, targetPosition, smoothing);
 
         }
+    }
+
+    public void BeginKick()
+    {
+        anim.SetBool("kickActive", true);
+        StartCoroutine(KickCoroutine());
+    }
+
+    public IEnumerator KickCoroutine()
+    {
+        yield return null;
+        anim.SetBool("kickActive", false);
     }
 }
