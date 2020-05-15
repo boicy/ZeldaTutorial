@@ -4,21 +4,21 @@ using UnityEngine;
 
 public class Log : Enemy
 {
-    private const string PLAYER_TAG = "Player";
-    private const string WAKE_UP = "wakeUp";
-    private const string MOVE_X = "moveX";
-    private const string MOVE_Y = "moveY";
+    public const string PLAYER_TAG = "Player";
+    public const string WAKE_UP = "wakeUp";
+    public const string MOVE_X = "moveX";
+    public const string MOVE_Y = "moveY";
 
     [Header("Physics")]
     public Rigidbody2D myRigidBody;
+
+    [Header("Animator")]
     public Animator anim;
 
-    [Header("Attack Stats")]
+    [Header("Target variables")]
     public Transform target;
     public float chaseRadius;
     public float attackRadius;
-
-    [Header("Locations")]
     public Transform homePosition;    
 
     // Start is called before the first frame update
@@ -59,7 +59,7 @@ public class Log : Enemy
         }
     }
 
-    private void setAnimFloat(Vector2 setVector)
+    public void setAnimFloat(Vector2 setVector)
     {
         anim.SetFloat(MOVE_X, setVector.x);
         anim.SetFloat(MOVE_Y, setVector.y);
@@ -88,7 +88,7 @@ public class Log : Enemy
         }
     }
 
-    private void ChangeState(EnemyState newState)
+    public void ChangeState(EnemyState newState)
     {
         if (currentState != newState)
         {
