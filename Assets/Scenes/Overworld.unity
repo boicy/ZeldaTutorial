@@ -53896,9 +53896,9 @@ GameObject:
   - component: {fileID: 1376812941}
   - component: {fileID: 1376812940}
   m_Layer: 0
-  m_Name: Treasure Chest
+  m_Name: Treasure Chest A
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -54002,10 +54002,11 @@ MonoBehaviour:
   context: {fileID: 11400000, guid: fd6f6d19324bb434d929a50c8798c1db, type: 2}
   contents: {fileID: 11400000, guid: a02e1bcb6a6734a0caa5f3699967db3a, type: 2}
   isOpen: 0
-  raiseItem: {fileID: 11400000, guid: 02ce3692adb494e97b36db15a38fdb8c, type: 2}
+  storedOpen: {fileID: 11400000, guid: b497fdacbe78c4fffad43fed73f8accb, type: 2}
   playerInventory: {fileID: 11400000, guid: c0e7bad68fee045748b05aa10ce2ea96, type: 2}
   dialogBox: {fileID: 891822666}
   dialogText: {fileID: 868811038}
+  raiseItem: {fileID: 11400000, guid: 02ce3692adb494e97b36db15a38fdb8c, type: 2}
 --- !u!61 &1376812941
 BoxCollider2D:
   m_ObjectHideFlags: 0
