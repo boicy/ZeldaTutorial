@@ -4,23 +4,18 @@ using UnityEngine;
 
 public class PlayerHit : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    private const string BREAKABLE_TAG = "breakable";
 
     private void OnTriggerEnter2D(Collider2D other)
-	{
-        if (other.CompareTag("breakable"))
+    {
+        if (IsBreakable(other))
         {
             other.GetComponent<Pots>().Smash();
         }
-	}
+    }
+
+    private static bool IsBreakable(Collider2D other)
+    {
+        return other.CompareTag(BREAKABLE_TAG);
+    }
 }

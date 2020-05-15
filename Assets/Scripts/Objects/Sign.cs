@@ -4,36 +4,48 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Sign : Interactable {
+    private const string PLAYER_TAG = "Player";
 
+    [Header("Sign details")]
     public GameObject dialogBox;
     public Text dialogText;
     public string dialog;   
 
-    // Start is called before the first frame update
-    void Start () {
-
-    }
-
     // Update is called once per frame
-    void Update () {
-        if (Input.GetKeyDown (KeyCode.Space) && playerInRange) {
-            if (dialogBox.activeInHierarchy) {
-                dialogBox.SetActive (false);
-            } else {
-                dialogBox.SetActive (true);
+    void Update ()
+    {
+        if (PlayerInteracted())
+        {
+            if (dialogBox.activeInHierarchy)
+            {
+                dialogBox.SetActive(false);
+            }
+            else
+            {
+                dialogBox.SetActive(true);
                 dialogText.text = dialog;
             }
         }
     }
 
+    private bool PlayerInteracted()
+    {
+        return Input.GetKeyDown(KeyCode.Space) && playerInRange;
+    }
+
     private void OnTriggerExit2D(Collider2D other)
     {
 
-        if (other.CompareTag("Player") && !other.isTrigger)
-        {            
+        if (PlayerLeaves(other))
+        {
             context.Raise();
             playerInRange = false;
             dialogBox.SetActive(false);
         }
+    }
+
+    private static bool PlayerLeaves(Collider2D other)
+    {
+        return other.CompareTag(PLAYER_TAG) && !other.isTrigger;
     }
 }

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Pots : MonoBehaviour
 {
+    private const string IS_SMASHED = "smash";
+    private const float THIRD_OF_A_SECOND = .3f;
     private Animator amimator;
 
     // Start is called before the first frame update
@@ -12,21 +14,15 @@ public class Pots : MonoBehaviour
         amimator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void Smash()
 	{
-        amimator.SetBool("smash", true);
+        amimator.SetBool(IS_SMASHED, true);
         StartCoroutine(breakCoroutine());
 	}
 
     IEnumerator breakCoroutine()
     {
-        yield return new WaitForSeconds(.3f);
+        yield return new WaitForSeconds(THIRD_OF_A_SECOND);
         this.gameObject.SetActive(false);
     }
 }

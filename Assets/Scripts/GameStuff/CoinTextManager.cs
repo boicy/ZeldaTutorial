@@ -5,8 +5,10 @@ using TMPro;
 
 public class CoinTextManager : MonoBehaviour
 {
-
+    [Header("Inventory to use")]
     public Inventory playerInventory;
+
+    [Header("Display Component to use")]
     public TextMeshProUGUI coinDisplay;
 
     public void UpdateCoinCount()

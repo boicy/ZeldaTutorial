@@ -13,7 +13,11 @@ public class Door : Interactable
     [Header("Door variables")]
     public DoorType thisDoorType;
     public bool open = false;
+
+    [Header("Inventory to use")]
     public Inventory playerInventory;
+
+    [Header("Physics")]
     public SpriteRenderer doorSprite;
     public BoxCollider2D physicsCollider;    
 

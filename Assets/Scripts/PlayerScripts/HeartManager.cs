@@ -1,17 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
-using System.Linq;
-using System;
 
 public class HeartManager : MonoBehaviour
 {
-
+    [Header("Heart Sprite stuff")]
     public Image[] hearts;
     public Sprite fullHeart;
     public Sprite halfFullHeart;
     public Sprite emptyHeart;
+
+    [Header("Health containers")]
     public FloatValue heartContainers;
     public FloatValue playerCurrentHealth;
 
@@ -38,7 +36,7 @@ public class HeartManager : MonoBehaviour
         {
             if (i <= tempHealth - 1)
             {
-                //Full HEart
+                //Full Heart
                 hearts[i].sprite = fullHeart;
             }
             else if (i >= tempHealth)

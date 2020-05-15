@@ -4,18 +4,28 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraMovement : MonoBehaviour {
+
+    private const string KICK_ACTIVE = "kickActive";
+
+    [Header("Position vars")]
     public Transform target;
     public float smoothing;
     public Vector2 maxPosition;
     public Vector2 minPosition;
 
+    [Header("Animator")]
     public Animator anim;
+
+    [Header("Postion Reset")]
+    public VectorValue camMin;
+    public VectorValue camMax;
 
     // Start is called before the first frame update
     void Start () {
+        maxPosition = camMax.initialValue;
+        minPosition = camMin.initialValue;
         anim = GetComponent<Animator>();
         transform.position = new Vector3(target.position.x, target.position.y, transform.position.z);
-
     }
 
     // smoothing out the camera jerkiness by using LateUpdate
@@ -33,13 +43,13 @@ public class CameraMovement : MonoBehaviour {
 
     public void BeginKick()
     {
-        anim.SetBool("kickActive", true);
+        anim.SetBool(KICK_ACTIVE, true);
         StartCoroutine(KickCoroutine());
     }
 
     public IEnumerator KickCoroutine()
     {
         yield return null;
-        anim.SetBool("kickActive", false);
+        anim.SetBool(KICK_ACTIVE, false);
     }
 }

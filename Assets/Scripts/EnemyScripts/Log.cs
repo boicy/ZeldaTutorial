@@ -4,22 +4,31 @@ using UnityEngine;
 
 public class Log : Enemy
 {
+    private const string PLAYER_TAG = "Player";
+    private const string WAKE_UP = "wakeUp";
+    private const string MOVE_X = "moveX";
+    private const string MOVE_Y = "moveY";
 
+    [Header("Physics")]
     public Rigidbody2D myRigidBody;
+    public Animator anim;
+
+    [Header("Attack Stats")]
     public Transform target;
     public float chaseRadius;
     public float attackRadius;
-    public Transform homePosition;
-    public Animator anim;
+
+    [Header("Locations")]
+    public Transform homePosition;    
 
     // Start is called before the first frame update
     void Start()
     {
         currentState = EnemyState.idle;
         myRigidBody = GetComponent<Rigidbody2D>();
-        target = GameObject.FindWithTag("Player").transform;
+        target = GameObject.FindWithTag(PLAYER_TAG).transform;
         anim = GetComponent<Animator>();
-        anim.SetBool("wakeUp", true);
+        anim.SetBool(WAKE_UP, true);
     }
 
     // Update is called once per frame
@@ -41,19 +50,19 @@ public class Log : Enemy
                 changeAmim(temp - transform.position);
                 myRigidBody.MovePosition(temp);                
                 ChangeState(EnemyState.walk);
-                anim.SetBool("wakeUp", true);
+                anim.SetBool(WAKE_UP, true);
             }
         }
         else if (Vector3.Distance(target.position, transform.position) > chaseRadius)
         {
-            anim.SetBool("wakeUp", false);
+            anim.SetBool(WAKE_UP, false);
         }
     }
 
     private void setAnimFloat(Vector2 setVector)
     {
-        anim.SetFloat("moveX", setVector.x);
-        anim.SetFloat("moveY", setVector.y);
+        anim.SetFloat(MOVE_X, setVector.x);
+        anim.SetFloat(MOVE_Y, setVector.y);
     }
 
     public void changeAmim(Vector2 direction)

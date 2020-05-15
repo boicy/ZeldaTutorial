@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public enum PlayerState {
@@ -12,55 +11,83 @@ public enum PlayerState {
 
 public class PlayerMovement : MonoBehaviour {
 
+    private const string MOVE_X = "moveX";
+    private const string MOVE_Y = "moveY";
+    private const string MOVING = "moving";
+    private const float THIRD_OF_A_SECOND = 0.3f;
+    private const int MIN_HEALTH = 0;
+
+    [Header("State")]
     public PlayerState currentState;
+    
+    [Header("Movement")]
+    public VectorValue startingPosition;
     public float speed;
+
+    [Header("Health stats")]
+    public FloatValue currentHealth;
+    public SignalSender playerHealthSignal;
+    public SignalSender playerHit;
+
+    [Header("Inventory stuff")]
+    public Inventory playerInventory;
+    public SpriteRenderer receivedItemSprite;
+
     private Rigidbody2D myRigidBody;
     private Vector3 change;
     private Animator animator;
-    public FloatValue currentHealth;
-    public SignalSender playerHealthSignal;
-    public VectorValue startingPosition;
-    public Inventory playerInventory;
-    public SpriteRenderer receivedItemSprite;
-    public SignalSender playerHit;
 
     // Start is called before the first frame update
     void Start () {
         currentState = PlayerState.walk;
         myRigidBody = GetComponent<Rigidbody2D> ();
         animator = GetComponent<Animator> ();
-        animator.SetFloat("moveX", 1);
-        animator.SetFloat("moveY", -1);
+        animator.SetFloat(MOVE_X, 1);
+        animator.SetFloat(MOVE_Y, -1);
         transform.position = startingPosition.initialValue;
     }
 
     // Update is called once per frame
-    void Update () {
+    void Update ()
+    {
         //is the player in an interaction
         if (currentState == PlayerState.interact)
         {
             return;
         }
         change = Vector3.zero;
-        change.x = Input.GetAxisRaw ("Horizontal");
-        change.y = Input.GetAxisRaw ("Vertical");
-        if (Input.GetButtonDown ("attack")
-            && currentState != PlayerState.attack
-            && currentState != PlayerState.stagger) {
-            StartCoroutine (AttackCoroutine ());
-        } else if (currentState == PlayerState.walk || currentState == PlayerState.idle) {
-            UpdateAnimationAndMove ();
+        change.x = Input.GetAxisRaw("Horizontal");
+        change.y = Input.GetAxisRaw("Vertical");
+        if (IsValidAttack())
+        {
+            StartCoroutine(AttackCoroutine());
         }
+        else if (NotAttacking())
+        {
+            UpdateAnimationAndMove();
+        }
+    }
+
+    private bool NotAttacking()
+    {
+        return currentState == PlayerState.walk || currentState == PlayerState.idle;
+    }
+
+    private bool IsValidAttack()
+    {
+        return Input.GetButtonDown("attack")
+                    && currentState != PlayerState.attack
+                    && currentState != PlayerState.stagger;
     }
 
     void UpdateAnimationAndMove () {
         if (change != Vector3.zero) {
             MovePlayer ();
-            animator.SetFloat ("moveX", change.x);
-            animator.SetFloat ("moveY", change.y);
-            animator.SetBool ("moving", true);
+            animator.SetFloat (MOVE_X, change.x);
+            animator.SetFloat (MOVE_Y, change.y);
+            animator.SetBool (MOVING, true);
         } else {
-            animator.SetBool ("moving", false);
+            animator.SetBool (MOVING, false);
         };
     }
 
@@ -77,7 +104,7 @@ public class PlayerMovement : MonoBehaviour {
         currentState = PlayerState.attack;
         yield return null;
         animator.SetBool ("attacking", false);
-        yield return new WaitForSeconds (0.3f);
+        yield return new WaitForSeconds (THIRD_OF_A_SECOND);
         if (currentState != PlayerState.interact) { 
             currentState = PlayerState.walk;
         }
@@ -107,12 +134,24 @@ public class PlayerMovement : MonoBehaviour {
     {
         currentHealth.RuntimeValue -= damage;
         playerHealthSignal.Raise();
-        if (currentHealth.RuntimeValue > 0) {            
-            StartCoroutine(knockCoroutine(knockTime));
-        }else
+        if (PlayerIsAlive())
         {
-            this.gameObject.SetActive(false);
+            StartCoroutine(knockCoroutine(knockTime));
         }
+        else
+        {
+            PlayerDies();
+        }
+    }
+
+    private void PlayerDies()
+    {
+        gameObject.SetActive(false);
+    }
+
+    private bool PlayerIsAlive()
+    {
+        return currentHealth.RuntimeValue > MIN_HEALTH;
     }
 
     private IEnumerator knockCoroutine(float knockTime)

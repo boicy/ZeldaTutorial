@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Coin : Powerup
 {
+    private const string PLAYER_TAG = "Player";
+
+    [Header("Inventory to use")]
     public Inventory playerInventory;
 
     // Start is called before the first frame update
@@ -12,15 +15,9 @@ public class Coin : Powerup
         powerupSignal.Raise();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player") && !other.isTrigger)
+        if (other.CompareTag(PLAYER_TAG) && !other.isTrigger)
         {
             playerInventory.coins += 1;
             powerupSignal.Raise();

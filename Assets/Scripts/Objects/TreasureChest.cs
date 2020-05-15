@@ -6,10 +6,18 @@ using UnityEngine.UI;
 
 public class TreasureChest : Interactable
 {
+    private const string PLAYER_TAG = "Player";
+    private const string OPENED = "opened";
+
+    [Header("What's in the box?")]
     public Item contents;
-    public Inventory playerInventory;
     public bool isOpen;
     public SignalSender raiseItem;
+
+    [Header("Players Inventory")]
+    public Inventory playerInventory;
+
+    [Header("Chest text and stuff")]
     public GameObject dialogBox;
     public Text dialogText;
     private Animator anim;
@@ -23,7 +31,7 @@ public class TreasureChest : Interactable
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && playerInRange)
+        if (PlayerInterects())
         {
             if (!isOpen)
             {
@@ -36,6 +44,11 @@ public class TreasureChest : Interactable
                 ChestIsAlreadyOpen();
             }
         }
+    }
+
+    private bool PlayerInterects()
+    {
+        return Input.GetKeyDown(KeyCode.Space) && playerInRange;
     }
 
     private void OpenChest()
@@ -53,7 +66,7 @@ public class TreasureChest : Interactable
         context.Raise();
         //set chest opened
         isOpen = true;
-        anim.SetBool("opened", true);
+        anim.SetBool(OPENED, true);
     }
     
     private void ChestIsAlreadyOpen()
@@ -65,7 +78,7 @@ public class TreasureChest : Interactable
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player") && !other.isTrigger && !isOpen)
+        if (PlayerInteracts(other))
         {
             context.Raise();
             playerInRange = true;
@@ -74,12 +87,15 @@ public class TreasureChest : Interactable
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player") && !other.isTrigger && !isOpen)
+        if (PlayerInteracts(other))
         {
             context.Raise();
             playerInRange = false;
         }
     }
 
-
+    private bool PlayerInteracts(Collider2D other)
+    {
+        return other.CompareTag(PLAYER_TAG) && !other.isTrigger && !isOpen;
+    }
 }

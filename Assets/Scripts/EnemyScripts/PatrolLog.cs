@@ -5,6 +5,7 @@ using UnityEngine;
 public class PatrolLog : Log
 {
 
+    [Header("Patrol points")]
     public Transform[] path;
     public int currentPoint;
     public Transform currentGoal;
@@ -21,8 +22,7 @@ public class PatrolLog : Log
                                                             target.position,
                                                             moveSpeed * Time.deltaTime);
                 changeAmim(temp - transform.position);
-                myRigidBody.MovePosition(temp);                
-                //anim.SetBool("wakeUp", true);            
+                myRigidBody.MovePosition(temp);                                 
             }
         }
         else if (Vector3.Distance(target.position, transform.position) > chaseRadius)

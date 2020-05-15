@@ -12,13 +12,20 @@ public enum EnemyState
 
 public class Enemy : MonoBehaviour
 {
+    private const int MIN_HEALTH = 0;
+    private const int SINGLE_FRAME_DURATION = 1;
 
+    [Header("State Machine")]
     public EnemyState currentState;
+
+    [Header("Enemy Stats")]
     public FloatValue maxHealth;
     public float health;
     public string enemyName;
     public int baseAttack;
     public float moveSpeed;
+
+    [Header("Death Effects")]
     public GameObject deathEffect;
 
     private void Awake()
@@ -29,7 +36,7 @@ public class Enemy : MonoBehaviour
     private void TakeDamage(float damage)
     {
         health -= damage;
-        if (health <= 0)
+        if (health <= MIN_HEALTH)
         {
             DeathEffect();
             this.gameObject.SetActive(false);
@@ -41,7 +48,7 @@ public class Enemy : MonoBehaviour
         if (deathEffect!=null)
         {
             GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
-            Destroy(effect, 1);
+            Destroy(effect, SINGLE_FRAME_DURATION);
         }
     }
 
