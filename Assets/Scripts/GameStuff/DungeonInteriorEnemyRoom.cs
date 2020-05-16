@@ -9,12 +9,6 @@ public class DungeonInteriorEnemyRoom: DungeonInteriorRoom
 {
     public Door[] doors;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     public void CheckEnemies()
     {        
         if (!enemies.Any(enemy => enemy.gameObject.activeInHierarchy))
@@ -26,4 +20,10 @@ public class DungeonInteriorEnemyRoom: DungeonInteriorRoom
     public void OpenDoors() => Array.ForEach(doors, door => door.Open());
 
     public void CloseDoors() => Array.ForEach(doors, door => door.Close());
+
+    public override void OnTriggerEnter2D(Collider2D other)
+    {
+        base.OnTriggerEnter2D(other);
+        CloseDoors();
+    }
 }

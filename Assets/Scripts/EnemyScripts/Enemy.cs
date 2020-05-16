@@ -29,6 +29,9 @@ public class Enemy : MonoBehaviour
     [Header("Death Effects")]
     public GameObject deathEffect;
 
+    [Header("Death Signals")]
+    public SignalSender roomSignal;
+
     private void Awake()
     {
         health = maxHealth.initialValue;        
@@ -44,8 +47,9 @@ public class Enemy : MonoBehaviour
         health -= damage;
         if (health <= MIN_HEALTH)
         {
-            DeathEffect();
+            DeathEffect();            
             this.gameObject.SetActive(false);
+            roomSignal.Raise();
         }
     }
 
