@@ -14,8 +14,8 @@ public class Room : MonoBehaviour
         if (other.CompareTag(PLAYER_TAG) && !other.isTrigger)
         {
             //activate all enemies and pots
-            Array.ForEach(enemies, new Action<Enemy>(Activate));
-            Array.ForEach(pots, new Action<Pots>(Activate));
+            Array.ForEach(enemies, enemy => enemy.gameObject.SetActive(true));
+            Array.ForEach(pots, pot => pot.gameObject.SetActive(true));            
         }
     }
 
@@ -23,11 +23,8 @@ public class Room : MonoBehaviour
     {
         if (other.CompareTag(PLAYER_TAG) && !other.isTrigger) {
             //Deactivate all enemies and pots
-            Array.ForEach(enemies, new Action<Enemy>(Deactivate));
-            Array.ForEach(pots, new Action<Pots>(Deactivate));
+            Array.ForEach(enemies, enemy => enemy.gameObject.SetActive(false));
+            Array.ForEach(pots, pot => pot.gameObject.SetActive(false));
         }
     }
-
-    private void Activate(MonoBehaviour component) => component.gameObject.SetActive(true);
-    private void Deactivate(MonoBehaviour component) => component.gameObject.SetActive(false);
 }
