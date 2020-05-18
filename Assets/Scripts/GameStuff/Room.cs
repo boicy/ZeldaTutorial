@@ -27,7 +27,7 @@ public class Room : MonoBehaviour
             //Deactivate all enemies and pots
             Array.ForEach(enemies, enemy => enemy.gameObject.SetActive(false));
             Array.ForEach(pots, pot => pot.gameObject.SetActive(false));
-            virtualCamera.SetActive(true);
+            virtualCamera.SetActive(false);
         }
     }
 }
