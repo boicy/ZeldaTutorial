@@ -47,9 +47,9 @@ public class Enemy : MonoBehaviour
         health -= damage;
         if (health <= MIN_HEALTH)
         {
-            DeathEffect();            
+            DeathEffect();
             this.gameObject.SetActive(false);
-            roomSignal.Raise();
+            roomSignal.Raise();                    
         }
     }
 

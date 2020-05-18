@@ -6,6 +6,7 @@ TagManager:
   tags:
   - breakable
   - enemies
+  - rooms
   layers:
   - Default
   - TransparentFX
