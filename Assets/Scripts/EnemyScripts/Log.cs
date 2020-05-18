@@ -38,24 +38,49 @@ public class Log : Enemy
 
     public virtual void CheckDistance()
     {
-        if (Vector3.Distance(target.position, transform.position) <= chaseRadius
-            && Vector3.Distance(target.position, transform.position) > attackRadius)
+        if (TheTargetIsInRange())
         {
-            if (currentState == EnemyState.idle || currentState == EnemyState.walk && currentState != EnemyState.stagger)
+            if (InAValidStateToChaseTarget())
             {
-                Vector3 temp = Vector3.MoveTowards(transform.position,
-                                                            target.position,
-                                                            moveSpeed * Time.deltaTime);
-                changeAmim(temp - transform.position);
-                myRigidBody.MovePosition(temp);                
-                ChangeState(EnemyState.walk);
-                anim.SetBool(WAKE_UP, true);
+                DoRangeActionOnTarget();
             }
         }
-        else if (Vector3.Distance(target.position, transform.position) > chaseRadius)
+        else if (TargetIsOutsideRange())
         {
-            anim.SetBool(WAKE_UP, false);
+            GoBackToSleep();
         }
+    }
+
+    public virtual void GoBackToSleep()
+    {
+        anim.SetBool(WAKE_UP, false);
+    }
+
+    public virtual void DoRangeActionOnTarget()
+    {
+        Vector3 temp = Vector3.MoveTowards(transform.position,
+                                                    target.position,
+                                                    moveSpeed * Time.deltaTime);
+        changeAmim(temp - transform.position);
+        myRigidBody.MovePosition(temp);
+        ChangeState(EnemyState.walk);
+        anim.SetBool(WAKE_UP, true);
+    }
+
+    public virtual bool TargetIsOutsideRange()
+    {
+        return Vector3.Distance(target.position, transform.position) > chaseRadius;
+    }
+
+    public virtual bool InAValidStateToChaseTarget()
+    {
+        return currentState == EnemyState.idle || currentState == EnemyState.walk && currentState != EnemyState.stagger;
+    }
+
+    public virtual bool TheTargetIsInRange()
+    {
+        return Vector3.Distance(target.position, transform.position) <= chaseRadius
+                    && Vector3.Distance(target.position, transform.position) > attackRadius;
     }
 
     public void setAnimFloat(Vector2 setVector)
