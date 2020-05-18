@@ -8,6 +8,7 @@ public class Room : MonoBehaviour
     public const string PLAYER_TAG = "Player";
     public Enemy[] enemies;
     public Pots[] pots;
+    public GameObject virtualCamera;
 
     public virtual void OnTriggerEnter2D(Collider2D other)
     {
@@ -15,7 +16,8 @@ public class Room : MonoBehaviour
         {
             //activate all enemies and pots
             Array.ForEach(enemies, enemy => enemy.gameObject.SetActive(true));
-            Array.ForEach(pots, pot => pot.gameObject.SetActive(true));            
+            Array.ForEach(pots, pot => pot.gameObject.SetActive(true));
+            virtualCamera.SetActive(true);
         }
     }
 
@@ -25,6 +27,7 @@ public class Room : MonoBehaviour
             //Deactivate all enemies and pots
             Array.ForEach(enemies, enemy => enemy.gameObject.SetActive(false));
             Array.ForEach(pots, pot => pot.gameObject.SetActive(false));
+            virtualCamera.SetActive(true);
         }
     }
 }

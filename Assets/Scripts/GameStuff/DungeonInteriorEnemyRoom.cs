@@ -26,4 +26,9 @@ public class DungeonInteriorEnemyRoom: DungeonInteriorRoom
         base.OnTriggerEnter2D(other);
         CloseDoors();
     }
+
+    public override void OnTriggerExit2D(Collider2D other)
+    {
+        base.OnTriggerExit2D(other);        
+    }
 }
