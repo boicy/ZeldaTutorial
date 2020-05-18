@@ -14,20 +14,31 @@ public class Room : MonoBehaviour
     {
         if (other.CompareTag(PLAYER_TAG) && !other.isTrigger)
         {
-            //activate all enemies and pots
-            Array.ForEach(enemies, enemy => enemy.gameObject.SetActive(true));
-            Array.ForEach(pots, pot => pot.gameObject.SetActive(true));
-            virtualCamera.SetActive(true);
+            PlayerOnEnterTriggerActions(other);
         }
+    }
+
+    public virtual void PlayerOnEnterTriggerActions(Collider2D other)
+    {
+        //activate all enemies and pots
+        Array.ForEach(enemies, enemy => enemy.gameObject.SetActive(true));
+        Array.ForEach(pots, pot => pot.gameObject.SetActive(true));
+        virtualCamera.SetActive(true);
     }
 
     public virtual void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag(PLAYER_TAG) && !other.isTrigger) {
-            //Deactivate all enemies and pots
-            Array.ForEach(enemies, enemy => enemy.gameObject.SetActive(false));
-            Array.ForEach(pots, pot => pot.gameObject.SetActive(false));
-            virtualCamera.SetActive(false);
+        if (other.CompareTag(PLAYER_TAG) && !other.isTrigger)
+        {
+            PlayerOnExitTriggerActions(other);
         }
+    }
+
+    public virtual void PlayerOnExitTriggerActions(Collider2D other)
+    {
+        //Deactivate all enemies and pots
+        Array.ForEach(enemies, enemy => enemy.gameObject.SetActive(false));
+        Array.ForEach(pots, pot => pot.gameObject.SetActive(false));
+        virtualCamera.SetActive(false);
     }
 }

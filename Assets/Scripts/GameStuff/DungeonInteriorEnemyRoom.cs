@@ -21,36 +21,24 @@ public class DungeonInteriorEnemyRoom: DungeonInteriorRoom
         }           
     }
 
+    public override void PlayerOnEnterTriggerActions(Collider2D other)
+    {
+        AwefulHackToAvoidPolygonCollionTriggeringDoorEarly(other);
+        base.PlayerOnEnterTriggerActions(other);
+        CloseDoors();
+    }
+
+    public override void PlayerOnExitTriggerActions(Collider2D other)
+    {
+        base.PlayerOnExitTriggerActions(other);
+    }
+
     public void OpenDoors() => Array.ForEach(doors, door => door.Open());
 
-    public void CloseDoors() => Array.ForEach(doors, door => door.Close()); 
-
-    public override void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag(PLAYER_TAG) && !other.isTrigger)
-        {
-            //activate all enemies and pots
-            Array.ForEach(enemies, enemy => enemy.gameObject.SetActive(true));
-            Array.ForEach(pots, pot => pot.gameObject.SetActive(true));
-            AwefulHackToAvoidPolygonCollionTriggeringDoorEarly(other);
-            virtualCamera.SetActive(true);
-            CloseDoors();
-        }
-    }
+    public void CloseDoors() => Array.ForEach(doors, door => door.Close());
 
     private static void AwefulHackToAvoidPolygonCollionTriggeringDoorEarly(Collider2D other)
     {
         other.transform.position += new Vector3(0, 1, 0);
-    }
-
-    public override void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag(PLAYER_TAG) && !other.isTrigger)
-        {
-            //Deactivate all enemies and pots
-            Array.ForEach(enemies, enemy => enemy.gameObject.SetActive(false));
-            Array.ForEach(pots, pot => pot.gameObject.SetActive(false));
-            virtualCamera.SetActive(false);
-        }
     }
 }
