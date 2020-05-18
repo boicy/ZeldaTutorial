@@ -6,27 +6,16 @@ public class AreaEnemy : Log
 {
     public Collider2D boundary;
 
-    public override void CheckDistance()
+    public override bool TheTargetIsInRange()
     {
-        if (Vector3.Distance(target.position, transform.position) <= chaseRadius
+        return Vector3.Distance(target.position, transform.position) <= chaseRadius
             && Vector3.Distance(target.position, transform.position) > attackRadius
-            && boundary.bounds.Contains(target.transform.position))
-        {
-            if (currentState == EnemyState.idle || currentState == EnemyState.walk && currentState != EnemyState.stagger)
-            {
-                Vector3 temp = Vector3.MoveTowards(transform.position,
-                                                            target.position,
-                                                            moveSpeed * Time.deltaTime);
-                changeAmim(temp - transform.position);
-                myRigidBody.MovePosition(temp);
-                ChangeState(EnemyState.walk);
-                anim.SetBool(WAKE_UP, true);
-            }
-        }
-        else if (Vector3.Distance(target.position, transform.position) > chaseRadius
-            || !boundary.bounds.Contains(target.transform.position))
-        {
-            anim.SetBool(WAKE_UP, false);
-        }
+            && boundary.bounds.Contains(target.transform.position);
+    }
+
+    public override bool TargetIsOutsideRange()
+    {
+        return Vector3.Distance(target.position, transform.position) > chaseRadius
+            || !boundary.bounds.Contains(target.transform.position);
     }
 }

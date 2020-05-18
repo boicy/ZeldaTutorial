@@ -11,33 +11,28 @@ public class PatrolLog : Log
     public Transform currentGoal;
     public float roundingDistance;
 
-    public override void CheckDistance()
+    public override void DoRangeActionOnTarget()
     {
-        if (Vector3.Distance(target.position, transform.position) <= chaseRadius
-            && Vector3.Distance(target.position, transform.position) > attackRadius)
+        Vector3 temp = Vector3.MoveTowards(transform.position,
+                                           target.position,
+                                           moveSpeed * Time.deltaTime);
+        changeAmim(temp - transform.position);
+        myRigidBody.MovePosition(temp);
+    }
+
+    public override void GoBackToSleep()
+    {
+        if (Vector3.Distance(transform.position, path[currentPoint].position) > roundingDistance)
         {
-            if (currentState == EnemyState.idle || currentState == EnemyState.walk && currentState != EnemyState.stagger)
-            {
-                Vector3 temp = Vector3.MoveTowards(transform.position,
-                                                            target.position,
-                                                            moveSpeed * Time.deltaTime);
-                changeAmim(temp - transform.position);
-                myRigidBody.MovePosition(temp);                                 
-            }
+            Vector3 temp = Vector3.MoveTowards(transform.position,
+                                        path[currentPoint].position,
+                                        moveSpeed * Time.deltaTime);
+            changeAmim(temp - transform.position);
+            myRigidBody.MovePosition(temp);
         }
-        else if (Vector3.Distance(target.position, transform.position) > chaseRadius)
+        else
         {
-            if (Vector3.Distance(transform.position, path[currentPoint].position) > roundingDistance)
-            {
-                Vector3 temp = Vector3.MoveTowards(transform.position,
-                                            path[currentPoint].position,
-                                            moveSpeed * Time.deltaTime);
-                changeAmim(temp - transform.position);
-                myRigidBody.MovePosition(temp);
-            }else
-            {
-                ChangeGoal();
-            }
+            ChangeGoal();
         }
     }
 
