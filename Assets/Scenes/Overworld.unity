@@ -52589,6 +52589,7 @@ GameObject:
   - component: {fileID: 416708876}
   - component: {fileID: 416708878}
   - component: {fileID: 416708877}
+  - component: {fileID: 416708879}
   m_Layer: 0
   m_Name: Room 3 vcam
   m_TagString: Untagged
@@ -52663,6 +52664,21 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 289645436}
+--- !u!114 &416708879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 416708875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00b2d199b96b516448144ab30fb26aed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ChannelMask: 1
+  m_Gain: 1
+  m_Use2DDistance: 1
 --- !u!1 &458449539
 GameObject:
   m_ObjectHideFlags: 3
@@ -53039,6 +53055,7 @@ GameObject:
   - component: {fileID: 645709520}
   - component: {fileID: 645709522}
   - component: {fileID: 645709521}
+  - component: {fileID: 645709523}
   m_Layer: 0
   m_Name: Room 5 vcam
   m_TagString: Untagged
@@ -53113,6 +53130,21 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 698500172}
+--- !u!114 &645709523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645709519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00b2d199b96b516448144ab30fb26aed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ChannelMask: 1
+  m_Gain: 1
+  m_Use2DDistance: 1
 --- !u!1 &698500171
 GameObject:
   m_ObjectHideFlags: 3
@@ -53714,6 +53746,7 @@ GameObject:
   - component: {fileID: 917504019}
   - component: {fileID: 917504021}
   - component: {fileID: 917504020}
+  - component: {fileID: 917504022}
   m_Layer: 0
   m_Name: Room 2 vcam
   m_TagString: Untagged
@@ -53788,6 +53821,21 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 458449540}
+--- !u!114 &917504022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 917504018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00b2d199b96b516448144ab30fb26aed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ChannelMask: 1
+  m_Gain: 1
+  m_Use2DDistance: 1
 --- !u!1001 &956270526
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55547,6 +55595,7 @@ GameObject:
   - component: {fileID: 1536228059}
   - component: {fileID: 1536228061}
   - component: {fileID: 1536228060}
+  - component: {fileID: 1536228062}
   m_Layer: 0
   m_Name: Room 7 vcam
   m_TagString: Untagged
@@ -55621,6 +55670,21 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 962993843}
+--- !u!114 &1536228062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536228058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00b2d199b96b516448144ab30fb26aed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ChannelMask: 1
+  m_Gain: 1
+  m_Use2DDistance: 1
 --- !u!114 &1559486991 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5944226624930607680, guid: ddb4dcd186c9d43ac953c9fa91004613,
@@ -56127,6 +56191,7 @@ GameObject:
   - component: {fileID: 1884632691}
   - component: {fileID: 1884632693}
   - component: {fileID: 1884632692}
+  - component: {fileID: 1884632694}
   m_Layer: 0
   m_Name: Room 6 vcam
   m_TagString: Untagged
@@ -56201,6 +56266,21 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 1413205976}
+--- !u!114 &1884632694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1884632690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00b2d199b96b516448144ab30fb26aed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ChannelMask: 1
+  m_Gain: 1
+  m_Use2DDistance: 1
 --- !u!1 &1923405585
 GameObject:
   m_ObjectHideFlags: 0
@@ -56500,6 +56580,7 @@ GameObject:
   - component: {fileID: 1989375437}
   - component: {fileID: 1989375439}
   - component: {fileID: 1989375438}
+  - component: {fileID: 1989375440}
   m_Layer: 0
   m_Name: Room 4 vcam
   m_TagString: Untagged
@@ -56574,6 +56655,75 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 1433800923}
+--- !u!114 &1989375440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1989375436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00b2d199b96b516448144ab30fb26aed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ChannelMask: 1
+  m_Gain: 1
+  m_Use2DDistance: 1
+--- !u!1 &1996931742 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8320781273296397293, guid: 656ffc20b70644c549df144b5f3c5f76,
+    type: 3}
+  m_PrefabInstance: {fileID: 8320781273473781359}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1996931751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1996931742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd438dd108a0f284aa931a2da434f1d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ImpulseDefinition:
+    m_ImpulseChannel: 1
+    m_RawSignal: {fileID: 11400000, guid: b6636383a2e9a49be8e6df3f94c0a4a1, type: 2}
+    m_AmplitudeGain: 1
+    m_FrequencyGain: 1
+    m_RepeatMode: 0
+    m_Randomize: 1
+    m_TimeEnvelope:
+      m_AttackShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_DecayShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_AttackTime: 0
+      m_SustainTime: 0.2
+      m_DecayTime: 0.7
+      m_ScaleWithImpact: 1
+      m_HoldForever: 0
+    m_ImpactRadius: 100
+    m_DirectionMode: 0
+    m_DissipationMode: 2
+    m_DissipationDistance: 1000
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  m_IgnoreTag: 
+  m_UseImpactDirection: 0
+  m_ScaleImpactWithMass: 0
+  m_ScaleImpactWithSpeed: 0
 --- !u!1 &1997300817
 GameObject:
   m_ObjectHideFlags: 0
@@ -57574,6 +57724,21 @@ MonoBehaviour:
   m_BoundingShape2D: {fileID: 5137047170127040867}
   m_ConfineScreenEdges: 1
   m_Damping: 0
+--- !u!114 &5137047170127040871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5137047170127040866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00b2d199b96b516448144ab30fb26aed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ChannelMask: 1
+  m_Gain: 1
+  m_Use2DDistance: 1
 --- !u!1001 &8320781273473781359
 PrefabInstance:
   m_ObjectHideFlags: 0

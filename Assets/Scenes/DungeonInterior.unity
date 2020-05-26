@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 45380446}
   - component: {fileID: 45380448}
   - component: {fileID: 45380447}
+  - component: {fileID: 45380449}
   m_Layer: 0
   m_Name: Room 3 vcam
   m_TagString: Untagged
@@ -206,6 +207,21 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 902473684}
+--- !u!114 &45380449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 45380445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00b2d199b96b516448144ab30fb26aed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ChannelMask: 1
+  m_Gain: 1
+  m_Use2DDistance: 1
 --- !u!1001 &229791393
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10289,6 +10305,7 @@ GameObject:
   - component: {fileID: 1102218240}
   - component: {fileID: 1102218239}
   - component: {fileID: 1102218238}
+  - component: {fileID: 1102218241}
   m_Layer: 0
   m_Name: Room 4 vcam
   m_TagString: Untagged
@@ -10363,6 +10380,21 @@ Transform:
   m_Father: {fileID: 1168186765}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1102218241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1102218237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00b2d199b96b516448144ab30fb26aed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ChannelMask: 1
+  m_Gain: 1
+  m_Use2DDistance: 1
 --- !u!1 &1168186762
 GameObject:
   m_ObjectHideFlags: 0
@@ -10581,6 +10613,12 @@ PrefabInstance:
       propertyPath: homePosition.y
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 2002958937608691283, guid: dbce40778d287442d9ed55477622d071,
+        type: 3}
+      propertyPath: thisLoot
+      value: 
+      objectReference: {fileID: 11400000, guid: 867ffe964b27844908144777f93f4504,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbce40778d287442d9ed55477622d071, type: 3}
 --- !u!4 &1232736504 stripped
@@ -10612,6 +10650,7 @@ GameObject:
   - component: {fileID: 1246460989}
   - component: {fileID: 1246460988}
   - component: {fileID: 1246460987}
+  - component: {fileID: 1246460990}
   m_Layer: 0
   m_Name: Room 5 vcam
   m_TagString: Untagged
@@ -10686,6 +10725,21 @@ Transform:
   m_Father: {fileID: 564156222}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1246460990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1246460986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00b2d199b96b516448144ab30fb26aed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ChannelMask: 1
+  m_Gain: 1
+  m_Use2DDistance: 1
 --- !u!1001 &1322007726
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10939,6 +10993,12 @@ PrefabInstance:
       propertyPath: homePosition.y
       value: 28
       objectReference: {fileID: 0}
+    - target: {fileID: 2002958937608691283, guid: dbce40778d287442d9ed55477622d071,
+        type: 3}
+      propertyPath: thisLoot
+      value: 
+      objectReference: {fileID: 11400000, guid: 867ffe964b27844908144777f93f4504,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbce40778d287442d9ed55477622d071, type: 3}
 --- !u!4 &1337619727 stripped
@@ -14157,6 +14217,12 @@ PrefabInstance:
       propertyPath: homePosition.y
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 2002958937608691283, guid: dbce40778d287442d9ed55477622d071,
+        type: 3}
+      propertyPath: thisLoot
+      value: 
+      objectReference: {fileID: 11400000, guid: 867ffe964b27844908144777f93f4504,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbce40778d287442d9ed55477622d071, type: 3}
 --- !u!4 &1361348976 stripped
@@ -14419,6 +14485,60 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 656ffc20b70644c549df144b5f3c5f76, type: 3}
+--- !u!1 &1557876845 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8320781273296397293, guid: 656ffc20b70644c549df144b5f3c5f76,
+    type: 3}
+  m_PrefabInstance: {fileID: 1557876844}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1557876846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557876845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd438dd108a0f284aa931a2da434f1d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ImpulseDefinition:
+    m_ImpulseChannel: 1
+    m_RawSignal: {fileID: 11400000, guid: b6636383a2e9a49be8e6df3f94c0a4a1, type: 2}
+    m_AmplitudeGain: 1
+    m_FrequencyGain: 1
+    m_RepeatMode: 0
+    m_Randomize: 1
+    m_TimeEnvelope:
+      m_AttackShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_DecayShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_AttackTime: 0
+      m_SustainTime: 0.2
+      m_DecayTime: 0.7
+      m_ScaleWithImpact: 1
+      m_HoldForever: 0
+    m_ImpactRadius: 100
+    m_DirectionMode: 0
+    m_DissipationMode: 2
+    m_DissipationDistance: 1000
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  m_IgnoreTag: 
+  m_UseImpactDirection: 0
+  m_ScaleImpactWithMass: 0
+  m_ScaleImpactWithSpeed: 0
 --- !u!1 &1572189272
 GameObject:
   m_ObjectHideFlags: 3
@@ -14657,6 +14777,7 @@ GameObject:
   - component: {fileID: 1640846209}
   - component: {fileID: 1640846211}
   - component: {fileID: 1640846210}
+  - component: {fileID: 1640846212}
   m_Layer: 0
   m_Name: Room 1 vcam
   m_TagString: Untagged
@@ -14731,6 +14852,21 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 1572189273}
+--- !u!114 &1640846212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1640846208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00b2d199b96b516448144ab30fb26aed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ChannelMask: 1
+  m_Gain: 1
+  m_Use2DDistance: 1
 --- !u!1001 &1660954170
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19858,6 +19994,7 @@ GameObject:
   - component: {fileID: 2129216598}
   - component: {fileID: 2129216600}
   - component: {fileID: 2129216599}
+  - component: {fileID: 2129216601}
   m_Layer: 0
   m_Name: Room 2 vcam
   m_TagString: Untagged
@@ -19932,6 +20069,21 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 1057117875}
+--- !u!114 &2129216601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129216597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00b2d199b96b516448144ab30fb26aed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ChannelMask: 1
+  m_Gain: 1
+  m_Use2DDistance: 1
 --- !u!1001 &1761887770215246550
 PrefabInstance:
   m_ObjectHideFlags: 0
