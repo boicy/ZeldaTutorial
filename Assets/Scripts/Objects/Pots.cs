@@ -8,6 +8,9 @@ public class Pots : MonoBehaviour
     private const float THIRD_OF_A_SECOND = .3f;
     private Animator amimator;
 
+    [Header("Death Effects")]
+    public LootTable lootTable;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +21,20 @@ public class Pots : MonoBehaviour
 	{
         amimator.SetBool(IS_SMASHED, true);
         StartCoroutine(breakCoroutine());
+        MakeLoot();
 	}
+
+    private void MakeLoot()
+    {
+        if (lootTable != null)
+        {
+            Powerup current = lootTable.LootPowerup();
+            if (current != null)
+            {
+                Instantiate(current.gameObject, transform.position, Quaternion.identity);
+            }
+        }
+    }
 
     IEnumerator breakCoroutine()
     {
