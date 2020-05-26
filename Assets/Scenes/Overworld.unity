@@ -54800,7 +54800,7 @@ MonoBehaviour:
   pots:
   - {fileID: 707099890}
   - {fileID: 1465646076}
-  virtualCamera: {fileID: 0}
+  virtualCamera: {fileID: 645709519}
 --- !u!60 &965848450
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -54811,7 +54811,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -55254,7 +55254,7 @@ MonoBehaviour:
   pots:
   - {fileID: 1956018896}
   - {fileID: 85940464}
-  virtualCamera: {fileID: 0}
+  virtualCamera: {fileID: 1884632690}
 --- !u!60 &1177354542
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -55265,7 +55265,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -56329,7 +56329,7 @@ MonoBehaviour:
   pots:
   - {fileID: 1106000909}
   - {fileID: 1510371984}
-  virtualCamera: {fileID: 0}
+  virtualCamera: {fileID: 1536228058}
 --- !u!60 &1486085824
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -56340,7 +56340,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -56781,7 +56781,7 @@ MonoBehaviour:
   pots:
   - {fileID: 881686122}
   - {fileID: 1997300819}
-  virtualCamera: {fileID: 0}
+  virtualCamera: {fileID: 1989375436}
 --- !u!60 &1566903757
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -56792,7 +56792,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -57303,7 +57303,7 @@ MonoBehaviour:
   - {fileID: 237936155}
   - {fileID: 1436887214}
   - {fileID: 1292419945}
-  virtualCamera: {fileID: 0}
+  virtualCamera: {fileID: 917504018}
 --- !u!60 &1878453766
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -57636,7 +57636,7 @@ MonoBehaviour:
   pots:
   - {fileID: 1771312701}
   - {fileID: 1571789472}
-  virtualCamera: {fileID: 0}
+  virtualCamera: {fileID: 416708875}
 --- !u!4 &1923405588
 Transform:
   m_ObjectHideFlags: 0
@@ -58972,6 +58972,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5137047170663423795, guid: 0839c3cd593a04370a0bdc1a84e355f8,
+        type: 3}
+      propertyPath: virtualCamera
+      value: 
+      objectReference: {fileID: 5137047170127040866}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0839c3cd593a04370a0bdc1a84e355f8, type: 3}
 --- !u!1 &5137047170127040866 stripped
