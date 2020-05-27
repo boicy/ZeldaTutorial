@@ -6,14 +6,14 @@ public class AreaEnemy : Log
 {
     public Collider2D boundary;
 
-    public override bool TheTargetIsInRange()
+    protected override bool TheTargetIsInRangeToChase()
     {
         return Vector3.Distance(target.position, transform.position) <= chaseRadius
             && Vector3.Distance(target.position, transform.position) > attackRadius
             && boundary.bounds.Contains(target.transform.position);
     }
 
-    public override bool TargetIsOutsideRange()
+    protected override bool TargetIsOutsideRangeToChase()
     {
         return Vector3.Distance(target.position, transform.position) > chaseRadius
             || !boundary.bounds.Contains(target.transform.position);

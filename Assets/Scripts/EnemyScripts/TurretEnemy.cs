@@ -19,7 +19,7 @@ public class TurretEnemy : Log
         }
     }
 
-    public override void DoRangeActionOnTarget()
+    protected override void DoChasingBehaviour()
     {
         if (canFire)
         {

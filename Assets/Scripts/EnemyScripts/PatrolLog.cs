@@ -11,7 +11,7 @@ public class PatrolLog : Log
     public Transform currentGoal;
     public float roundingDistance;
 
-    public override void DoRangeActionOnTarget()
+    protected override void DoChasingBehaviour()
     {
         Vector3 temp = Vector3.MoveTowards(transform.position,
                                            target.position,
@@ -20,7 +20,7 @@ public class PatrolLog : Log
         myRigidBody.MovePosition(temp);
     }
 
-    public override void GoBackToSleep()
+    protected override void DoRestingBehaviour()
     {
         if (Vector3.Distance(transform.position, path[currentPoint].position) > roundingDistance)
         {

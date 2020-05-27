@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -36,27 +37,18 @@ public class Log : Enemy
         CheckDistance();
     }
 
-    public virtual void CheckDistance()
+    protected override bool TheTargetIsInRangeToChase()
     {
-        if (TheTargetIsInRange())
-        {
-            if (InAValidStateToChaseTarget())
-            {
-                DoRangeActionOnTarget();
-            }
-        }
-        else if (TargetIsOutsideRange())
-        {
-            GoBackToSleep();
-        }
+        return Vector3.Distance(target.position, transform.position) <= chaseRadius
+                    && Vector3.Distance(target.position, transform.position) > attackRadius;
     }
 
-    public virtual void GoBackToSleep()
+    protected override bool InAValidStateToChaseTarget()
     {
-        anim.SetBool(WAKE_UP, false);
+        return currentState == EnemyState.idle || currentState == EnemyState.walk && currentState != EnemyState.stagger;
     }
 
-    public virtual void DoRangeActionOnTarget()
+    protected override void DoChasingBehaviour()
     {
         Vector3 temp = Vector3.MoveTowards(transform.position,
                                                     target.position,
@@ -67,20 +59,28 @@ public class Log : Enemy
         anim.SetBool(WAKE_UP, true);
     }
 
-    public virtual bool TargetIsOutsideRange()
+    protected override bool TargetIsInsideRangeToChaseAndAttack()
+    {
+        //weird state machine thing going on here
+        return false;
+    }
+
+    protected override void DoAttackingBehaviour()
+    {
+        //this is never reached in base log class as default is to not to do
+        //this just run at them and do damage that way. Hopefully other
+        // enemies will use this as a default too!
+        throw new NotImplementedException();
+    }
+
+    protected override bool TargetIsOutsideRangeToChase()
     {
         return Vector3.Distance(target.position, transform.position) > chaseRadius;
     }
 
-    public virtual bool InAValidStateToChaseTarget()
+    protected override void DoRestingBehaviour()
     {
-        return currentState == EnemyState.idle || currentState == EnemyState.walk && currentState != EnemyState.stagger;
-    }
-
-    public virtual bool TheTargetIsInRange()
-    {
-        return Vector3.Distance(target.position, transform.position) <= chaseRadius
-                    && Vector3.Distance(target.position, transform.position) > attackRadius;
+        anim.SetBool(WAKE_UP, false);
     }
 
     public void setAnimFloat(Vector2 setVector)

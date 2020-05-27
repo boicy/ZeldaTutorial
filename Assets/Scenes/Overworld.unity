@@ -449,7 +449,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1177354543}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &97384755
 GameObject:
@@ -54540,6 +54540,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 2745755000610714452}
   - {fileID: 1956018900}
   - {fileID: 85940468}
   - {fileID: 1884632691}
@@ -54899,8 +54900,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 2745755000610714452}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -56212,7 +56212,7 @@ Transform:
   m_Children:
   - {fileID: 1413205976}
   m_Father: {fileID: 1177354543}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1884632692
 MonoBehaviour:
@@ -56537,7 +56537,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1177354543}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1977434054
 GameObject:
@@ -57449,13 +57449,13 @@ MonoBehaviour:
   homePosition: {x: 0, y: 0}
   deathEffect: {fileID: 7596356647243182489, guid: 2882fe018c05448db893a4ad1d25b784,
     type: 3}
-  thisLoot: {fileID: 0}
+  thisLoot: {fileID: 11400000, guid: 867ffe964b27844908144777f93f4504, type: 2}
   roomSignal: {fileID: 0}
   myRigidBody: {fileID: 0}
   anim: {fileID: 0}
   target: {fileID: 1024100449}
   chaseRadius: 6
-  attackRadius: 0
+  attackRadius: 2
   projectile: {fileID: 6919661557861801071, guid: c1c61de10b2944d12a60f375cd875da5,
     type: 3}
   fireDelay: 0.7
@@ -57465,7 +57465,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1388769882}
+    m_TransformParent: {fileID: 1177354543}
     m_Modifications:
     - target: {fileID: 2067642959078176016, guid: e97e83fb035e74d2e8e0482a5292693a,
         type: 3}

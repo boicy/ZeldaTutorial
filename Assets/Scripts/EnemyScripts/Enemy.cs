@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,7 +11,7 @@ public enum EnemyState
     stagger
 }
 
-public class Enemy : MonoBehaviour
+public abstract class Enemy : MonoBehaviour
 {
     private const int MIN_HEALTH = 0;
     private const int SINGLE_FRAME_DURATION = 1;
@@ -96,4 +97,32 @@ public class Enemy : MonoBehaviour
             myRigidBody.velocity = Vector2.zero;
         }
     }
+
+    //lift up as virtual
+    public virtual void CheckDistance()
+    {
+        if (TheTargetIsInRangeToChase())
+        {
+            if (InAValidStateToChaseTarget())
+            {
+                DoChasingBehaviour();
+            }
+        }
+        else if (TargetIsInsideRangeToChaseAndAttack())
+        {
+            DoAttackingBehaviour();
+        }
+        else if (TargetIsOutsideRangeToChase())
+        {
+            DoRestingBehaviour();
+        }
+    }
+
+    protected abstract bool TheTargetIsInRangeToChase();
+    protected abstract bool InAValidStateToChaseTarget();
+    protected abstract void DoChasingBehaviour();
+    protected abstract bool TargetIsInsideRangeToChaseAndAttack();
+    protected abstract void DoAttackingBehaviour();
+    protected abstract bool TargetIsOutsideRangeToChase();
+    protected abstract void DoRestingBehaviour();
 }
