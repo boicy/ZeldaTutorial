@@ -496,93 +496,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &203521781
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 203521782}
-  - component: {fileID: 203521784}
-  - component: {fileID: 203521783}
-  m_Layer: 0
-  m_Name: Boundary 1
-  m_TagString: Untagged
-  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &203521782
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 203521781}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.59, y: -46.1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1849210695}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &203521783
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 203521781}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6ee99494c9214fecb1c79c907cdbebd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentState: 0
-  maxHealth: {fileID: 11400000, guid: 5bec4214533684524afb9104276f72c6, type: 2}
-  health: 0
-  enemyName: Bob
-  baseAttack: 1
-  moveSpeed: 1
-  homePosition: {x: 0, y: 0}
-  deathEffect: {fileID: 7596356647243182489, guid: 2882fe018c05448db893a4ad1d25b784,
-    type: 3}
-  thisLoot: {fileID: 0}
-  roomSignal: {fileID: 0}
-  myRigidBody: {fileID: 0}
-  anim: {fileID: 5101699407706862479}
-  target: {fileID: 1024100449}
-  chaseRadius: 6
-  attackRadius: 1
-  boundary: {fileID: 203521784}
---- !u!61 &203521784
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 203521781}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.6356516, y: 0.10199547}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 10.239401, y: 3.8327522}
-  m_EdgeRadius: 0
 --- !u!1 &235839220
 GameObject:
   m_ObjectHideFlags: 0
@@ -53042,7 +52955,7 @@ Transform:
   - {fileID: 1177354543}
   - {fileID: 1486085825}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &645709519
 GameObject:
@@ -54690,6 +54603,12 @@ Transform:
   m_Father: {fileID: 1878453767}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &1339709120 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 5944226624930607679, guid: ddb4dcd186c9d43ac953c9fa91004613,
+    type: 3}
+  m_PrefabInstance: {fileID: 1491467782474711476}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1376812936
 GameObject:
   m_ObjectHideFlags: 0
@@ -56064,37 +55983,6 @@ Transform:
   m_Father: {fileID: 1923405588}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1849210694
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1849210695}
-  m_Layer: 0
-  m_Name: EnemyBoundaryHolder
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1849210695
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1849210694}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 203521782}
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1878453764
 GameObject:
   m_ObjectHideFlags: 0
@@ -56881,6 +56769,7 @@ GameObject:
   - component: {fileID: 2020179905}
   - component: {fileID: 2020179907}
   - component: {fileID: 2020179906}
+  - component: {fileID: 2020179908}
   m_Layer: 0
   m_Name: Ogre
   m_TagString: Untagged
@@ -56951,7 +56840,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &2020179904
 Rigidbody2D:
@@ -57045,6 +56934,34 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.825943, y: 1.3363972}
   m_EdgeRadius: 0
+--- !u!114 &2020179908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020179901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e85bf48ec8dfa4679b52c4682d591ca1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentState: 0
+  maxHealth: {fileID: 11400000, guid: 5bec4214533684524afb9104276f72c6, type: 2}
+  health: 0
+  enemyName: Ogre
+  baseAttack: 4
+  moveSpeed: 1
+  homePosition: {x: 44, y: -17}
+  deathEffect: {fileID: 7596356647243182489, guid: 2882fe018c05448db893a4ad1d25b784,
+    type: 3}
+  thisLoot: {fileID: 11400000, guid: 433a8a71bdb864835ac7289300b36d4a, type: 2}
+  roomSignal: {fileID: 11400000, guid: 016f8fa5393d44318b5d907be6de96a9, type: 2}
+  myRigidBody: {fileID: 2020179904}
+  anim: {fileID: 2020179906}
+  target: {fileID: 0}
+  chaseRadius: 5
+  attackRadius: 2
 --- !u!1 &2130542337
 GameObject:
   m_ObjectHideFlags: 0
@@ -57414,6 +57331,38 @@ PrefabInstance:
       propertyPath: anim
       value: 
       objectReference: {fileID: 5101699407706862479}
+    - target: {fileID: 5944226624930607680, guid: ddb4dcd186c9d43ac953c9fa91004613,
+        type: 3}
+      propertyPath: homePosition.x
+      value: -11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5944226624930607680, guid: ddb4dcd186c9d43ac953c9fa91004613,
+        type: 3}
+      propertyPath: homePosition.y
+      value: -45
+      objectReference: {fileID: 0}
+    - target: {fileID: 5944226624930607680, guid: ddb4dcd186c9d43ac953c9fa91004613,
+        type: 3}
+      propertyPath: thisLoot
+      value: 
+      objectReference: {fileID: 11400000, guid: 867ffe964b27844908144777f93f4504,
+        type: 2}
+    - target: {fileID: 5944226624930607680, guid: ddb4dcd186c9d43ac953c9fa91004613,
+        type: 3}
+      propertyPath: roomSignal
+      value: 
+      objectReference: {fileID: 11400000, guid: dc85207ba9e4a45d88c7bd3ffda3636d,
+        type: 2}
+    - target: {fileID: 5944226624930607680, guid: ddb4dcd186c9d43ac953c9fa91004613,
+        type: 3}
+      propertyPath: myRigidBody
+      value: 
+      objectReference: {fileID: 1339709120}
+    - target: {fileID: 5944226624930607680, guid: ddb4dcd186c9d43ac953c9fa91004613,
+        type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1024100449}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddb4dcd186c9d43ac953c9fa91004613, type: 3}
 --- !u!1 &2745755000610714451 stripped
@@ -57442,17 +57391,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 0
   maxHealth: {fileID: 11400000, guid: 5bec4214533684524afb9104276f72c6, type: 2}
-  health: 0
+  health: 2
   enemyName: Paul
-  baseAttack: 0
+  baseAttack: 2
   moveSpeed: 0
-  homePosition: {x: 0, y: 0}
+  homePosition: {x: 45, y: -5}
   deathEffect: {fileID: 7596356647243182489, guid: 2882fe018c05448db893a4ad1d25b784,
     type: 3}
   thisLoot: {fileID: 11400000, guid: 867ffe964b27844908144777f93f4504, type: 2}
-  roomSignal: {fileID: 0}
-  myRigidBody: {fileID: 0}
-  anim: {fileID: 0}
+  roomSignal: {fileID: 11400000, guid: 016f8fa5393d44318b5d907be6de96a9, type: 2}
+  myRigidBody: {fileID: 2745755000610714457}
+  anim: {fileID: 2745755000610714458}
   target: {fileID: 1024100449}
   chaseRadius: 6
   attackRadius: 2
@@ -57460,6 +57409,18 @@ MonoBehaviour:
     type: 3}
   fireDelay: 0.7
   canFire: 1
+--- !u!50 &2745755000610714457 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 2067642959078176018, guid: e97e83fb035e74d2e8e0482a5292693a,
+    type: 3}
+  m_PrefabInstance: {fileID: 4227578164338378308}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2745755000610714458 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2067642959078176022, guid: e97e83fb035e74d2e8e0482a5292693a,
+    type: 3}
+  m_PrefabInstance: {fileID: 4227578164338378308}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4227578164338378308
 PrefabInstance:
   m_ObjectHideFlags: 0
