@@ -25,7 +25,15 @@ public class TurretEnemy : Log
         {
             Vector3 launchVector = target.transform.position - transform.position;
             GameObject current = Instantiate(projectile, transform.position, Quaternion.identity);
-            current.GetComponent<Projectile>().Launch(launchVector);
+
+            Projectile projectile1 = current.GetComponent<Projectile>();
+
+            Debug.Log(projectile.activeInHierarchy);
+            Debug.Log(projectile.layer);
+
+
+            projectile1.Launch(launchVector);
+
             canFire = false;
             ChangeState(EnemyState.walk);
             anim.SetBool(WAKE_UP, true);

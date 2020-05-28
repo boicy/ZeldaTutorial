@@ -28,7 +28,8 @@ public class Log : Enemy
         myRigidBody = GetComponent<Rigidbody2D>();
         target = GameObject.FindWithTag(PLAYER_TAG).transform;
         anim = GetComponent<Animator>();
-        anim.SetBool(WAKE_UP, true);
+        anim.SetBool(WAKE_UP, true);        
+
     }
 
     // Update is called once per frame

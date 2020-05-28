@@ -57640,6 +57640,26 @@ PrefabInstance:
       propertyPath: fireDelay
       value: 0.7
       objectReference: {fileID: 0}
+    - target: {fileID: 6749729679560936504, guid: e97e83fb035e74d2e8e0482a5292693a,
+        type: 3}
+      propertyPath: attackRadius
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6749729679560936504, guid: e97e83fb035e74d2e8e0482a5292693a,
+        type: 3}
+      propertyPath: chaseRadius
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6749729679560936504, guid: e97e83fb035e74d2e8e0482a5292693a,
+        type: 3}
+      propertyPath: baseAttack
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6749729679560936504, guid: e97e83fb035e74d2e8e0482a5292693a,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e97e83fb035e74d2e8e0482a5292693a, type: 3}
 --- !u!4 &4429053470595852574 stripped
