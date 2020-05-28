@@ -38,10 +38,12 @@ public class Projectile : MonoBehaviour
     
     public void OnTriggerEnter2D(Collider2D other)
     {
-        //This is being triggered by the Room polygon collider
+        //This was being triggered by the Room polygon collider
         //leading to the projectiles beign destroyed immediately.
-        //Not that annoying or anything.
-        //need to find some way to fix this
-        Destroy(this.gameObject);        
+        //Checking the Player tag solves this thankfully!
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

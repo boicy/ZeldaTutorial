@@ -37,6 +37,9 @@ public class PlayerMovement : MonoBehaviour {
     private Vector3 change;
     private Animator animator;
 
+    [Header("Shooting stuff")]
+    public GameObject projectile;
+
     // Start is called before the first frame update
     void Start () {
         currentState = PlayerState.walk;
@@ -58,9 +61,18 @@ public class PlayerMovement : MonoBehaviour {
         change = Vector3.zero;
         change.x = Input.GetAxisRaw("Horizontal");
         change.y = Input.GetAxisRaw("Vertical");
-        if (IsValidAttack())
+        RunPlayerStateMachine();
+    }
+
+    private void RunPlayerStateMachine()
+    {
+        if (IsValidAttackFor("First Weapon"))
         {
-            StartCoroutine(AttackCoroutine());
+            StartCoroutine(FirstAttackCoroutine());
+        }
+        else if (IsValidAttackFor("Second Weapon"))
+        {
+            StartCoroutine(SecondAttackCoroutine());
         }
         else if (NotAttacking())
         {
@@ -73,9 +85,9 @@ public class PlayerMovement : MonoBehaviour {
         return currentState == PlayerState.walk || currentState == PlayerState.idle;
     }
 
-    private bool IsValidAttack()
+    private bool IsValidAttackFor(string weaponType)
     {
-        return Input.GetButtonDown("attack")
+        return Input.GetButtonDown(weaponType)
                     && currentState != PlayerState.attack
                     && currentState != PlayerState.stagger;
     }
@@ -99,7 +111,7 @@ public class PlayerMovement : MonoBehaviour {
         );
     }
 
-    private IEnumerator AttackCoroutine() {        
+    private IEnumerator FirstAttackCoroutine() {        
         animator.SetBool("attacking", true);
         currentState = PlayerState.attack;
         yield return null;
@@ -108,6 +120,31 @@ public class PlayerMovement : MonoBehaviour {
         if (currentState != PlayerState.interact) { 
             currentState = PlayerState.walk;
         }
+    }
+
+    private IEnumerator SecondAttackCoroutine()
+    {        
+        currentState = PlayerState.attack;
+        yield return null;
+        MakeArrow();        
+        yield return new WaitForSeconds(THIRD_OF_A_SECOND);
+        if (currentState != PlayerState.interact)
+        {
+            currentState = PlayerState.walk;
+        }
+    }
+
+    private void MakeArrow()
+    {
+        Vector2 temp = new Vector2(animator.GetFloat(MOVE_X), animator.GetFloat(MOVE_Y));
+        Arrow arrow = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Arrow>();
+        arrow.Setup(temp, ChooseArrowDirection());
+    }
+
+    Vector3 ChooseArrowDirection()
+    {
+        float temp = Mathf.Atan2(animator.GetFloat(MOVE_Y), animator.GetFloat(MOVE_X)) * Mathf.Rad2Deg;
+        return new Vector3(0,0,temp);
     }
 
     public void RaiseItem()

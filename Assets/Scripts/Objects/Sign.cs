@@ -30,7 +30,7 @@ public class Sign : Interactable {
 
     private bool PlayerInteracted()
     {
-        return Input.GetButtonDown("attack") && playerInRange;
+        return Input.GetButtonDown("First Weapon") && playerInRange;
     }
 
     private void OnTriggerExit2D(Collider2D other)
