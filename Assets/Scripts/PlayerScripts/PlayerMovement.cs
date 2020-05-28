@@ -39,6 +39,7 @@ public class PlayerMovement : MonoBehaviour {
 
     [Header("Shooting stuff")]
     public GameObject projectile;
+    public SignalSender reduceMagic;
 
     // Start is called before the first frame update
     void Start () {
@@ -136,9 +137,13 @@ public class PlayerMovement : MonoBehaviour {
 
     private void MakeArrow()
     {
-        Vector2 temp = new Vector2(animator.GetFloat(MOVE_X), animator.GetFloat(MOVE_Y));
-        Arrow arrow = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Arrow>();
-        arrow.Setup(temp, ChooseArrowDirection());
+        if (playerInventory.currentMagic > 0)
+        {
+            Vector2 temp = new Vector2(animator.GetFloat(MOVE_X), animator.GetFloat(MOVE_Y));
+            Arrow arrow = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Arrow>();
+            arrow.Setup(temp, ChooseArrowDirection());
+            reduceMagic.Raise();
+        }
     }
 
     Vector3 ChooseArrowDirection()
