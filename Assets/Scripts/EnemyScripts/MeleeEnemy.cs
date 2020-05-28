@@ -6,41 +6,31 @@ using UnityEngine;
 public class MeleeEnemy : Log
 {
 
-    //public virtual void CheckDistance()
-    //{
-    //    if (TheTargetIsInRangeToChase())
-    //    {
-    //        if (InAValidStateToChaseTarget())
-    //        {
-    //            DoChasingBehaviour(); //DoChjasing Behaviour!
-    //        }
-    //    }
-    //    else if (TargetIsInsideRangeToChaseAndAttack())
-    //    {
-    //        DoAttackingBehaviour();
-    //    }
-    //    else if (TargetIsOutsideRangeToChase())
-    //    {
-    //        DoRestingBehaviour();
-    //    }
-    //}
-
     protected override bool TargetIsInsideRangeToChaseAndAttack()
     {
-        return Vector3.Distance(target.position, transform.position) <= chaseRadius
-                    && Vector3.Distance(target.position, transform.position) <= attackRadius;
+        return TargetIsInsideChaseRadius()
+                    && TargetIsInsideAttackRadius();
     }
 
     protected override void DoAttackingBehaviour()
     {
-        StartCoroutine(AttackCoroutine()); 
+        if (EnemyIsWalkingOrIsStaggered())
+        {
+            StartCoroutine(AttackCoroutine());
+        }
     }
+
+    private bool TargetIsInsideAttackRadius() => Vector3.Distance(target.position, transform.position) <= attackRadius;
+
+    private bool TargetIsInsideChaseRadius() => Vector3.Distance(target.position, transform.position) <= chaseRadius;
+
+    private bool EnemyIsWalkingOrIsStaggered() => (currentState == EnemyState.walk) && (currentState != EnemyState.stagger);
 
     public IEnumerator AttackCoroutine()
     {
         currentState = EnemyState.attack;
         anim.SetBool("attack", true);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
         currentState = EnemyState.walk;
         anim.SetBool("attack", false);
     }
