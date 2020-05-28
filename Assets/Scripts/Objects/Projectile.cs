@@ -35,9 +35,13 @@ public class Projectile : MonoBehaviour
     {
         myRigidBody.velocity = initialVelocity * moveSpeed;
     }
-
+    
     public void OnTriggerEnter2D(Collider2D other)
     {
+        //This is being triggered by the Room polygon collider
+        //leading to the projectiles beign destroyed immediately.
+        //Not that annoying or anything.
+        //need to find some way to fix this
         Destroy(this.gameObject);        
     }
 }
