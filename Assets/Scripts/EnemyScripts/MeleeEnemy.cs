@@ -33,7 +33,7 @@ public class MeleeEnemy : Log
 
     protected override void DoAttackingBehaviour()
     {
-        StartCoroutine(AttackCoroutine());
+        StartCoroutine(AttackCoroutine()); 
     }
 
     public IEnumerator AttackCoroutine()

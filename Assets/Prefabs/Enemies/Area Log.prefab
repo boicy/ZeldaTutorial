@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 5944226624930607675}
   - component: {fileID: 5944226624930607679}
   - component: {fileID: 5944226624930607678}
-  - component: {fileID: 5944226624930607680}
   - component: {fileID: 5944226624930607681}
   - component: {fileID: 5944226624930607682}
+  - component: {fileID: -7416887968906633199}
   m_Layer: 8
   m_Name: Area Log
   m_TagString: enemies
@@ -154,32 +154,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6325257, y: 0.29059696}
   m_EdgeRadius: 0
---- !u!114 &5944226624930607680
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5944226624930607674}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e787f3224131f46e7b0abc88b7fea9c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentState: 0
-  maxHealth: {fileID: 11400000, guid: 5bec4214533684524afb9104276f72c6, type: 2}
-  health: 2
-  enemyName: Larry the Log
-  baseAttack: 1
-  moveSpeed: 1.5
-  deathEffect: {fileID: 7596356647243182489, guid: 2882fe018c05448db893a4ad1d25b784,
-    type: 3}
-  myRigidBody: {fileID: 0}
-  anim: {fileID: 0}
-  target: {fileID: 0}
-  chaseRadius: 4
-  attackRadius: 1.2
-  homePosition: {fileID: 0}
 --- !u!61 &5944226624930607681
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -221,3 +195,32 @@ MonoBehaviour:
   thrust: 2
   knockTime: 0.2
   damage: 1
+--- !u!114 &-7416887968906633199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5944226624930607674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6ee99494c9214fecb1c79c907cdbebd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentState: 0
+  maxHealth: {fileID: 11400000, guid: 5bec4214533684524afb9104276f72c6, type: 2}
+  health: 2
+  enemyName: Larry
+  baseAttack: 1
+  moveSpeed: 1
+  homePosition: {x: 0, y: 0}
+  deathEffect: {fileID: 7596356647243182489, guid: 2882fe018c05448db893a4ad1d25b784,
+    type: 3}
+  thisLoot: {fileID: 11400000, guid: 867ffe964b27844908144777f93f4504, type: 2}
+  roomSignal: {fileID: 0}
+  myRigidBody: {fileID: 5944226624930607679}
+  anim: {fileID: 5944226624930607675}
+  target: {fileID: 0}
+  chaseRadius: 4
+  attackRadius: 1.2
+  boundary: {fileID: 0}

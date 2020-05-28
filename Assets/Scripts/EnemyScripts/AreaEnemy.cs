@@ -8,14 +8,23 @@ public class AreaEnemy : Log
 
     protected override bool TheTargetIsInRangeToChase()
     {
-        return Vector3.Distance(target.position, transform.position) <= chaseRadius
-            && Vector3.Distance(target.position, transform.position) > attackRadius
-            && boundary.bounds.Contains(target.transform.position);
+        return WithinChaseRadius()
+            && OutsideAttackRadius()
+            && WithinBoundary();
     }
+
+    private bool WithinBoundary() => boundary.bounds.Contains(target.transform.position);
+
+    private bool OutsideAttackRadius() => Vector3.Distance(target.position, transform.position) > attackRadius;
+
+    private bool WithinChaseRadius() => Vector3.Distance(target.position, transform.position) <= chaseRadius;
 
     protected override bool TargetIsOutsideRangeToChase()
     {
-        return Vector3.Distance(target.position, transform.position) > chaseRadius
-            || !boundary.bounds.Contains(target.transform.position);
+        return OutsideChaseRadius() || NotWithinBoundary();
     }
+
+    private bool NotWithinBoundary() => !boundary.bounds.Contains(target.transform.position);
+
+    private bool OutsideChaseRadius() => Vector3.Distance(target.position, transform.position) > chaseRadius;
 }
