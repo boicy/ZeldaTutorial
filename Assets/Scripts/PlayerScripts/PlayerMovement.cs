@@ -40,6 +40,7 @@ public class PlayerMovement : MonoBehaviour {
     [Header("Shooting stuff")]
     public GameObject projectile;
     public SignalSender reduceMagic;
+    public Item bow;
 
     // Start is called before the first frame update
     void Start () {
@@ -73,7 +74,9 @@ public class PlayerMovement : MonoBehaviour {
         }
         else if (IsValidAttackFor("Second Weapon"))
         {
-            StartCoroutine(SecondAttackCoroutine());
+            if (playerInventory.Contains(bow)) { 
+                StartCoroutine(SecondAttackCoroutine());
+            }
         }
         else if (NotAttacking())
         {
