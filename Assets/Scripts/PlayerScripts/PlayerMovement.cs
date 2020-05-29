@@ -142,6 +142,7 @@ public class PlayerMovement : MonoBehaviour {
             Vector2 temp = new Vector2(animator.GetFloat(MOVE_X), animator.GetFloat(MOVE_Y));
             Arrow arrow = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Arrow>();
             arrow.Setup(temp, ChooseArrowDirection());
+            playerInventory.ReduceMagic(arrow.magicCost);
             reduceMagic.Raise();
         }
     }
