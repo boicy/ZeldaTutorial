@@ -41,4 +41,9 @@ public class Room : MonoBehaviour
         Array.ForEach(pots, pot => pot.gameObject.SetActive(false));
         virtualCamera.SetActive(false);
     }
+
+    public void OnDisable()
+    {
+        virtualCamera.SetActive(false);
+    }
 }
