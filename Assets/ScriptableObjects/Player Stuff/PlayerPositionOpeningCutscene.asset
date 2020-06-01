@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ca521d3230d684d119d821421ddd3aec, type: 3}
-  m_Name: PlayerPosition
+  m_Name: PlayerPositionOpeningCutscene
   m_EditorClassIdentifier: 
-  initialValue: {x: 9, y: -15}
-  defaultValue: {x: 9, y: -15}
+  initialValue: {x: 0, y: 0}
+  defaultValue: {x: 0, y: 0}

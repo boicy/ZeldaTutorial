@@ -98,7 +98,10 @@ public class PlayerMovement : MonoBehaviour {
 
     void UpdateAnimationAndMove () {
         if (change != Vector3.zero) {
-            MovePlayer ();
+
+            MovePlayer();
+            change.x = Mathf.Round(change.x);
+            change.y = Mathf.Round(change.y);
             animator.SetFloat (MOVE_X, change.x);
             animator.SetFloat (MOVE_Y, change.y);
             animator.SetBool (MOVING, true);
