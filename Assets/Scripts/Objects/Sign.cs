@@ -12,7 +12,7 @@ public class Sign : Interactable {
     public string dialog;   
 
     // Update is called once per frame
-    void Update ()
+    public virtual void Update ()
     {
         if (PlayerInteracted())
         {

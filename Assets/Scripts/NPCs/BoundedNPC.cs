@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class BoundedNPC : Interactable
+public class BoundedNPC : Sign
 {
     private const int WALK_RIGHT = 0;
     private const int WALK_UP = 1;
@@ -12,28 +10,67 @@ public class BoundedNPC : Interactable
     private Transform myTransform;
     private Rigidbody2D myRigidBody;
     private Animator anim;    
+    private float moveTimeSeconds;    
+    private float waitTimeSeconds;
+    private bool isMoving;
 
     [Header("Bounds")]
     public Collider2D bounds;
 
-    [Header("Speed")]
+    [Header("Move Stuff")]
     public float speed;
+    public float minMoveTime;
+    public float maxMoveTime;
+    public float minWaitTime;
+    public float maxWaitTime;
 
     void Start()
     {
+        moveTimeSeconds = Random.Range(minMoveTime, maxMoveTime);
+        waitTimeSeconds = Random.Range(minWaitTime, maxWaitTime);
         myTransform = GetComponent<Transform>();
         myRigidBody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         ChangeDirection();
     }
     
-    void Update()
+    public override void Update()
     {
-        if (!playerInRange)
+        base.Update();
+        if (isMoving)
         {
-            Move();
+            moveTimeSeconds -= Time.deltaTime;
+            if (moveTimeSeconds <= 0)
+            {
+                moveTimeSeconds = Random.Range(minMoveTime, maxMoveTime);
+                isMoving = false;
+            }
+            if (!playerInRange)
+            {
+                Move();
+            }
+        } else
+        {
+            waitTimeSeconds -= Time.deltaTime;
+            if (waitTimeSeconds <=0)
+            {
+                ChooseDifferentDirection();
+                isMoving = true;
+                waitTimeSeconds = Random.Range(minWaitTime, maxWaitTime);
+            }
         }
-        
+    }
+
+    private void ChooseDifferentDirection()
+    {
+        var currentDirection = directionVector;
+        ChangeDirection();
+        int loops = 0;
+        while (currentDirection == directionVector && loops < 10)
+        {
+            loops++;
+            ChangeDirection();
+        }
     }
 
     private void Move()
@@ -81,13 +118,6 @@ public class BoundedNPC : Interactable
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        var currentDirection = directionVector;
-        ChangeDirection();
-        int loops = 0;
-        while (currentDirection == directionVector && loops < 10) 
-        {
-            loops++;
-            ChangeDirection();
-        }
+        ChooseDifferentDirection();
     }
 }
