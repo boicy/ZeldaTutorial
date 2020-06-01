@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    private const string STARTING_SCENE = "Overworld";
+    private const string STARTING_SCENE = "OpeningCutscene";
 
     public void NewGame()
     {
