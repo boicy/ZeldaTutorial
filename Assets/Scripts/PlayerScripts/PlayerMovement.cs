@@ -42,6 +42,15 @@ public class PlayerMovement : MonoBehaviour {
     public SignalSender reduceMagic;
     public Item bow;
 
+    [Header("IFrame stuff")]
+    public Color flashColor;
+    public Color regularColor;
+    public float flashDuration;
+    public int numberOfFlashes;
+    public Collider2D triggerCollider;
+    private SpriteRenderer spriteRenderer;
+
+
     // Start is called before the first frame update
     void Start () {
         currentState = PlayerState.walk;
@@ -50,6 +59,7 @@ public class PlayerMovement : MonoBehaviour {
         animator.SetFloat(MOVE_X, 1);
         animator.SetFloat(MOVE_Y, -1);
         transform.position = startingPosition.initialValue;
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -196,6 +206,7 @@ public class PlayerMovement : MonoBehaviour {
     private void PlayerDies()
     {
         gameObject.SetActive(false);
+        
     }
 
     private bool PlayerIsAlive()
@@ -208,6 +219,7 @@ public class PlayerMovement : MonoBehaviour {
         playerHit.Raise();
         if (myRigidBody != null)
         {
+            StartCoroutine(flashCoroutine());
             yield return new WaitForSeconds(knockTime);
             myRigidBody.velocity = Vector2.zero;
             currentState = PlayerState.idle;
@@ -215,4 +227,18 @@ public class PlayerMovement : MonoBehaviour {
         }
     }
 
+    private IEnumerator flashCoroutine()
+    {
+        int temp = 0;
+        triggerCollider.enabled = false;
+        while (temp < numberOfFlashes)
+        {
+            spriteRenderer.color = flashColor;
+            yield return new WaitForSeconds(flashDuration);
+            spriteRenderer.color = regularColor;
+            yield return new WaitForSeconds(flashDuration);
+            temp++;
+        }
+        triggerCollider.enabled = true;
+    }
 }

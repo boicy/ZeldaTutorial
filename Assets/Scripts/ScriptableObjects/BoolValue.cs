@@ -4,21 +4,12 @@ using UnityEngine;
 
 
 [CreateAssetMenu]
-public class BoolValue : ScriptableObject, ISerializationCallbackReceiver
+[System.Serializable]
+public class BoolValue : ScriptableObject
 {
     public bool initialValue;
 
     [HideInInspector]
     public bool RuntimeValue;
-
-    public void OnBeforeSerialize()
-    {
-        RuntimeValue = initialValue;
-    }
-
-    public void OnAfterDeserialize()
-    {
-
-    }
 
 }

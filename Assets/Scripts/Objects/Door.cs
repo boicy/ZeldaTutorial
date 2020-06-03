@@ -23,7 +23,7 @@ public class Door : Interactable
 
     private void Update()
     {
-        if (Input.GetButtonDown("attack"))
+        if (Input.GetButtonDown("First Weapon"))
         {
             if (playerInRange && thisDoorType == DoorType.key)
             {

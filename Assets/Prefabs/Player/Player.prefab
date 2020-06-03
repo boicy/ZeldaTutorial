@@ -250,6 +250,11 @@ MonoBehaviour:
     type: 3}
   reduceMagic: {fileID: 11400000, guid: e7b94b7d39cc64735b42940075b6f3ce, type: 2}
   bow: {fileID: 11400000, guid: b4ea408acff9d4e80b62d2c4a7a451ef, type: 2}
+  flashColor: {r: 0.8867924, g: 0, b: 0, a: 0.5019608}
+  regularColor: {r: 1, g: 1, b: 1, a: 1}
+  flashDuration: 0.07
+  numberOfFlashes: 4
+  triggerCollider: {fileID: 2745078607312107552}
 --- !u!95 &2745078607312107553
 Animator:
   serializedVersion: 3

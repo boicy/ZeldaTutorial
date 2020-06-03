@@ -2,6 +2,7 @@
 using UnityEngine;
 
 [CreateAssetMenu]
+[System.Serializable]
 public class SignalSender : ScriptableObject
 {
     public List<SignalListener> listeners = new List<SignalListener>();
