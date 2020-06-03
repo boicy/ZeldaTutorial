@@ -150,11 +150,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88394501536144accb3211c012686597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
-  - {fileID: 11400000, guid: b497fdacbe78c4fffad43fed73f8accb, type: 2}
-  - {fileID: 11400000, guid: 1af19748f308a4ab3ae6ac9aba3d62bd, type: 2}
-  - {fileID: 11400000, guid: 360736514cd9345c1943664b012a442d, type: 2}
+  scriptables:
   - {fileID: 11400000, guid: c0e7bad68fee045748b05aa10ce2ea96, type: 2}
+  - {fileID: 11400000, guid: 360736514cd9345c1943664b012a442d, type: 2}
+  - {fileID: 11400000, guid: 1af19748f308a4ab3ae6ac9aba3d62bd, type: 2}
+  - {fileID: 11400000, guid: b497fdacbe78c4fffad43fed73f8accb, type: 2}
 --- !u!4 &15994869
 Transform:
   m_ObjectHideFlags: 0
@@ -56343,6 +56343,42 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 264665283924657792, guid: c2d6706fa798744c191234647c03d721,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 264665283924657792, guid: c2d6706fa798744c191234647c03d721,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 264665283924657792, guid: c2d6706fa798744c191234647c03d721,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 264665283924657792, guid: c2d6706fa798744c191234647c03d721,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 11500000, guid: 88394501536144accb3211c012686597,
+        type: 3}
+    - target: {fileID: 264665283924657792, guid: c2d6706fa798744c191234647c03d721,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SaveScriptables
+      objectReference: {fileID: 0}
+    - target: {fileID: 264665283924657792, guid: c2d6706fa798744c191234647c03d721,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 264665283924657792, guid: c2d6706fa798744c191234647c03d721,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 15994868}
     - target: {fileID: 573195754804993939, guid: c2d6706fa798744c191234647c03d721,
         type: 3}
       propertyPath: m_IsActive
@@ -56477,6 +56513,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 5739893476576478116, guid: c2d6706fa798744c191234647c03d721,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 15994868}
+    - target: {fileID: 5739893476576478116, guid: c2d6706fa798744c191234647c03d721,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResetScriptables
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d6706fa798744c191234647c03d721, type: 3}

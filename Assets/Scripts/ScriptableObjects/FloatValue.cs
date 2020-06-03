@@ -8,7 +8,6 @@ public class FloatValue : ScriptableObject
 {
     public float initialValue;
 
-    [HideInInspector]
     public float RuntimeValue; 
 
 }

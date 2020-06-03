@@ -8,7 +8,18 @@ using UnityEngine;
 public class GameSaveManager : MonoBehaviour
 {
     public static GameSaveManager gameSave;
-    public List<ScriptableObject> objects = new List<ScriptableObject>();
+    public List<ScriptableObject> scriptables = new List<ScriptableObject>();
+
+    public void ResetScriptables()
+    {
+        for (int i = 0; i < scriptables.Count; i++)
+        {
+            if (File.Exists(FilePathFor(scriptables[i], i)))
+            {
+                File.Delete(FilePathFor(scriptables[i], i));
+            }
+        }
+    }
 
     private void Awake()
     {
@@ -35,36 +46,33 @@ public class GameSaveManager : MonoBehaviour
 
     public void SaveScriptables()
     {
-        objects.ForEach(Save);
-    }
-
-    private void Save(ScriptableObject obj)
-    {
-        FileStream file = File.Create(FilePath(obj));
-        BinaryFormatter formatter = new BinaryFormatter();
-        var json = JsonUtility.ToJson(obj);
-        formatter.Serialize(file, json);
-        file.Close();
-    }
-
-    public void LoadScriptables()
-    {
-        objects.ForEach(Load);
-    }
-
-    private void Load(ScriptableObject obj)
-    {
-        if (File.Exists(FilePath(obj))) {
-            FileStream file = File.Open(FilePath(obj), FileMode.Open);
+        for (int i = 0; i < scriptables.Count; i++)
+        {
+            FileStream file = File.Create(FilePathFor(scriptables[i], i));
             BinaryFormatter formatter = new BinaryFormatter();
-            JsonUtility.FromJsonOverwrite((string)formatter.Deserialize(file), obj);
+            var json = JsonUtility.ToJson(scriptables[i]);
+            formatter.Serialize(file, json);
             file.Close();
         }
     }
 
-    private static string FilePath(ScriptableObject obj)
+    public void LoadScriptables()
+    {        
+        for(int i = 0; i < scriptables.Count; i++)
+        {
+            if (File.Exists(FilePathFor(scriptables[i], i)))
+            {
+                FileStream file = File.Open(FilePathFor(scriptables[i], i), FileMode.Open);
+                BinaryFormatter formatter = new BinaryFormatter();
+                JsonUtility.FromJsonOverwrite((string)formatter.Deserialize(file), scriptables[i]);
+                file.Close();
+            }
+        }
+    }
+
+    private string FilePathFor(ScriptableObject obj, int count)
     {
         return Application.persistentDataPath
-                + string.Format("/{0}.dat", obj.GetHashCode());
+                + string.Format("/{0}.dat", count);
     }
 }
