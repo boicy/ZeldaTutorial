@@ -18,7 +18,7 @@ public class InventoryManager : MonoBehaviour
     public void SetTextAndButton(string description, bool buttonActive)
     {
         descriptionText.text = description;
-        useButton.SetActive(buttonActive);        
+        useButton.SetActive(buttonActive);
     }
 
     void MakeInventorySlots()
@@ -31,24 +31,28 @@ public class InventoryManager : MonoBehaviour
 
     private void InstantiateItemInSlot(InventoryItem item)
     {
-        GameObject temp = Instantiate(
-            blankInventorySlot,
-            inventoryPanel.transform.position,
-            Quaternion.identity
-            );
-        temp.transform.SetParent(inventoryPanel.transform);
-        InventorySlot newSlot = temp.GetComponent<InventorySlot>();
-        if (newSlot)
+        if (item.numberHeld > 0 || item.itemName == "Bottle")
         {
-            newSlot.Setup(item, this);
+            GameObject temp = Instantiate(
+                blankInventorySlot,
+                inventoryPanel.transform.position,
+                Quaternion.identity
+                );
+            temp.transform.SetParent(inventoryPanel.transform);
+            InventorySlot newSlot = temp.GetComponent<InventorySlot>();
+            if (newSlot)
+            {
+                newSlot.Setup(item, this);
+            }
         }
+
     }
 
     // Start is called before the first frame update
     void Start()
     {
         MakeInventorySlots();
-        SetTextAndButton("", false);        
+        SetTextAndButton("", false);
     }
 
     public void SetupDescriptionAndButton(string newDescription, bool isItemUsable, InventoryItem newItem)
@@ -58,11 +62,28 @@ public class InventoryManager : MonoBehaviour
         useButton.SetActive(isItemUsable);
     }
 
+    void ClearInventorySlots()
+    {
+        for (int i = 0; i < inventoryPanel.transform.childCount; i++)
+        {
+            Destroy(inventoryPanel.transform.GetChild(i).gameObject);
+        }
+    }
+
     public void UseButtonPressed()
     {
         if (currentItem)
         {
+            //use item
             currentItem.Use();
+            //clear all inv slots
+            ClearInventorySlots();
+            //refill all with new numbers
+            MakeInventorySlots();
+            if (currentItem.numberHeld == 0)
+            {
+                SetTextAndButton("", false);
+            }
         }
     }
 }

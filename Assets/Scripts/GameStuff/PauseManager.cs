@@ -8,7 +8,18 @@ public class PauseManager : MonoBehaviour
     private const string PAUSE_BUTTON = "Pause";
     private bool isPaused = false;
     public GameObject pausePanel;
+    public GameObject inventoryPanel;
     public string mainMenu;
+    public bool usingPausePanel;
+
+    private void Start()
+    {
+        isPaused = false;
+        pausePanel.SetActive(false);
+        inventoryPanel.SetActive(false);
+        usingPausePanel = false;
+    }
+
 
     // Update is called once per frame
     void Update()
@@ -29,6 +40,7 @@ public class PauseManager : MonoBehaviour
         }
         else
         {
+            inventoryPanel.SetActive(false);
             pausePanel.SetActive(false);
             Time.timeScale = 1f;
         }
@@ -38,5 +50,20 @@ public class PauseManager : MonoBehaviour
     {
         SceneManager.LoadScene(mainMenu);
         Time.timeScale = 1f;
+    }
+
+    public void SwitchPanels()
+    {
+        usingPausePanel = !usingPausePanel;
+        if (usingPausePanel)
+        {
+            pausePanel.SetActive(true);
+            inventoryPanel.SetActive(false);
+        }
+        else
+        {
+            inventoryPanel.SetActive(true);
+            pausePanel.SetActive(false);
+        }
     }
 }

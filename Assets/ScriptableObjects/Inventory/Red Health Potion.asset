@@ -17,7 +17,7 @@ MonoBehaviour:
     to drink this!
   itemImage: {fileID: -8581888248530165674, guid: 8b3ac4258ad244ecb907c72347b7784d,
     type: 3}
-  numberHeld: 1
+  numberHeld: 0
   usable: 1
   unique: 0
   thisEvent:
@@ -31,6 +31,17 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000}
+        m_MethodName: DecreaseAmount
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
