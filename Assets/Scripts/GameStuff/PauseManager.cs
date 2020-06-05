@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class PauseManager : MonoBehaviour
 {
     private const string PAUSE_BUTTON = "Pause";
+    private const string INVENTORY_BUTTON = "Inventory";
     private bool isPaused = false;
     public GameObject pausePanel;
     public GameObject inventoryPanel;
@@ -26,24 +27,37 @@ public class PauseManager : MonoBehaviour
     {
         if (Input.GetButtonDown(PAUSE_BUTTON))
         {
-            ChangePause();
+            ChangePause(pausePanel);
+        } else if (Input.GetButtonDown(INVENTORY_BUTTON))
+        {
+            ChangePause(inventoryPanel);
         }
     }
 
-    public void ChangePause()
+    public void ChangePause(GameObject panelToActivate)
     {
         isPaused = !isPaused;
         if (isPaused)
         {
-            pausePanel.SetActive(true);
-            Time.timeScale = 0f;
+            ActivatePanelAndPause(panelToActivate);
         }
         else
         {
-            inventoryPanel.SetActive(false);
-            pausePanel.SetActive(false);
-            Time.timeScale = 1f;
+            TurnOffBothPanelsAndResume();
         }
+    }
+
+    private static void ActivatePanelAndPause(GameObject panelToActivate)
+    {
+        panelToActivate.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+    private void TurnOffBothPanelsAndResume()
+    {
+        inventoryPanel.SetActive(false);
+        pausePanel.SetActive(false);
+        Time.timeScale = 1f;
     }
 
     public void QuitToMenu()
