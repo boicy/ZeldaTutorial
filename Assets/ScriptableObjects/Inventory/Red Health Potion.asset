@@ -17,7 +17,7 @@ MonoBehaviour:
     to drink this!
   itemImage: {fileID: -8581888248530165674, guid: 8b3ac4258ad244ecb907c72347b7784d,
     type: 3}
-  numberHeld: 0
+  numberHeld: 1
   usable: 1
   unique: 0
   thisEvent:

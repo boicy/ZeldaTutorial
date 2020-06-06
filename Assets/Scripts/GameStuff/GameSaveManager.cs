@@ -8,10 +8,11 @@ using UnityEngine;
 public class GameSaveManager : MonoBehaviour
 {
     public static GameSaveManager gameSave;
-    public List<ScriptableObject> scriptables = new List<ScriptableObject>();
+    public List<ResetableScriptableObject> scriptables = new List<ResetableScriptableObject>();
 
     public void ResetScriptables()
     {
+        //Delete Files
         for (int i = 0; i < scriptables.Count; i++)
         {
             if (File.Exists(FilePathFor(scriptables[i], i)))
@@ -19,6 +20,8 @@ public class GameSaveManager : MonoBehaviour
                 File.Delete(FilePathFor(scriptables[i], i));
             }
         }
+        //Reset Objects to default:
+        scriptables.ForEach(obj => obj.Reset());
     }
 
     private void Awake()

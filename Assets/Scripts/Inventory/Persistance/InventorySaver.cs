@@ -17,6 +17,18 @@ public class InventorySaver : MonoBehaviour
     private SerialisableListString SL = new SerialisableListString();
 
 
+    public void ResetScriptables()
+    {
+        //Delete the file
+        if (File.Exists(FilePath()))
+        {
+            File.Delete(FilePath());
+        }
+        //Reset the values in the InventoryItems
+        itemDb.Reset();
+        myInventory.Reset();
+    }
+
     private void OnEnable()
     {
         //clear the inventory
@@ -105,7 +117,7 @@ public class InventorySaver : MonoBehaviour
     private void JSONSave()
     {
         //filepath
-        string filepath = Application.persistentDataPath + "/newsave.json";
+        string filepath = FilePath();
 
         //create a streamwriter
         StreamWriter sw = new StreamWriter(filepath);
@@ -123,6 +135,10 @@ public class InventorySaver : MonoBehaviour
         sw.Close();
     }
 
+    private static string FilePath()
+    {
+        return Application.persistentDataPath + "/newsave.json";
+    }
 
     public void LoadScriptables()
     {
@@ -148,8 +164,5 @@ public class InventorySaver : MonoBehaviour
         }
 
     }
-
-
-
 
 }

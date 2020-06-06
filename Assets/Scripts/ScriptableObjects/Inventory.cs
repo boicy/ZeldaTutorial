@@ -4,7 +4,7 @@ using UnityEngine;
 
 [CreateAssetMenu]
 [System.Serializable]
-public class Inventory : ScriptableObject
+public class Inventory : ResetableScriptableObject
 {
     public Item currentItem;
     public List<Item> items = new List<Item>();
@@ -43,5 +43,10 @@ public class Inventory : ScriptableObject
     public bool Contains(Item item)
     {
         return items.Contains(item);        
+    }
+
+    public override void Reset()
+    {
+        //no op
     }
 }

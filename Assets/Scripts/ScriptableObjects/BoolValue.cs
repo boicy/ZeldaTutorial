@@ -1,14 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+﻿using UnityEngine;
 
 [CreateAssetMenu]
 [System.Serializable]
-public class BoolValue : ScriptableObject
+public class BoolValue : ResetableScriptableObject
 {
 
     public bool initialValue;
     public bool RuntimeValue;
 
+    public override void Reset()
+    {
+        RuntimeValue = initialValue;        
+    }
 }

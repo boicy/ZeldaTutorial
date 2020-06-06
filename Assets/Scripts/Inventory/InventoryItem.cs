@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -27,5 +28,10 @@ public class InventoryItem : ScriptableObject
         {
             numberHeld = 0;
         }
+    }
+
+    internal void Reset()
+    {
+        numberHeld = 0;
     }
 }

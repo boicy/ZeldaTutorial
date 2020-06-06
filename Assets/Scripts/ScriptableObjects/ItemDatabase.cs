@@ -17,4 +17,9 @@ public class ItemDatabase : ScriptableObject
     {
         return item => item.itemName == itemName;
     }
+
+    internal void Reset()
+    {
+        items.ForEach(item => item.Reset());
+    }
 }

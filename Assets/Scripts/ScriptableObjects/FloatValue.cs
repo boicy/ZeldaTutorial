@@ -1,13 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 [CreateAssetMenu]
 [System.Serializable]
-public class FloatValue : ScriptableObject
+public class FloatValue : ResetableScriptableObject
 {
     public float initialValue;
 
-    public float RuntimeValue; 
+    public float RuntimeValue;
 
+    public override void Reset()
+    {
+        RuntimeValue = initialValue;
+    }
 }
