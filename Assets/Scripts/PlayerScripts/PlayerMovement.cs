@@ -26,9 +26,12 @@ public class PlayerMovement : MonoBehaviour {
     public VectorValue startingPosition;
     public float speed;
 
+    /*
     [Header("Health stats")]
     public FloatValue currentHealth;
     public SignalSender playerHealthSignal;
+    */
+
     public SignalSender playerHit;
 
     [Header("Inventory stuff")]
@@ -192,7 +195,7 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     public void Knock(float knockTime, float damage)
-    {
+    {   /*
         currentHealth.RuntimeValue -= damage;
         playerHealthSignal.Raise();
         if (PlayerIsAlive())
@@ -203,8 +206,10 @@ public class PlayerMovement : MonoBehaviour {
         {
             PlayerDies();
         }
+        */
+        StartCoroutine(knockCoroutine(knockTime));
     }
-
+    /*
     private void PlayerDies()
     {
         gameObject.SetActive(false);
@@ -216,6 +221,7 @@ public class PlayerMovement : MonoBehaviour {
     {
         return currentHealth.RuntimeValue > MIN_HEALTH;
     }
+    */
 
     private IEnumerator knockCoroutine(float knockTime)
     {
