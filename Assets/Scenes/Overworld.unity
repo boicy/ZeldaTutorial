@@ -182,7 +182,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e5a2eaeea35b4d99ab04cf0c3fdf578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerInventory: {fileID: 11400000, guid: 2fc244c8e6ecb404bae542d1075ea1e8, type: 2}
+  myInventory: {fileID: 11400000, guid: 2fc244c8e6ecb404bae542d1075ea1e8, type: 2}
+  itemDb: {fileID: 11400000, guid: ac12ee96f877f4f4e891f14978f5061b, type: 2}
 --- !u!1 &78639478
 GameObject:
   m_ObjectHideFlags: 0
@@ -56788,6 +56789,11 @@ PrefabInstance:
       propertyPath: dialogText
       value: 
       objectReference: {fileID: 868811038}
+    - target: {fileID: 675443672707806118, guid: 3456e6739e19e4a50b89b7441f71774f,
+        type: 3}
+      propertyPath: isOpen
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3456e6739e19e4a50b89b7441f71774f, type: 3}
 --- !u!1001 &848723295136294831
