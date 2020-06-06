@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum PlayerState {
     walk,
@@ -11,6 +12,7 @@ public enum PlayerState {
 
 public class PlayerMovement : MonoBehaviour {
 
+    private const string MAIN_MENU = "StartMenu";
     private const string MOVE_X = "moveX";
     private const string MOVE_Y = "moveY";
     private const string MOVING = "moving";
@@ -206,7 +208,8 @@ public class PlayerMovement : MonoBehaviour {
     private void PlayerDies()
     {
         gameObject.SetActive(false);
-        
+        SceneManager.LoadScene(MAIN_MENU);
+
     }
 
     private bool PlayerIsAlive()
