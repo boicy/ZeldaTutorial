@@ -70,7 +70,6 @@ public class PlayerMovement : MonoBehaviour {
         {
             return;
         }
-        change = Vector3.zero;
         change.x = Input.GetAxisRaw("Horizontal");
         change.y = Input.GetAxisRaw("Vertical");
         RunPlayerStateMachine();
@@ -78,11 +77,11 @@ public class PlayerMovement : MonoBehaviour {
 
     private void RunPlayerStateMachine()
     {
-        if (IsValidAttackFor("First Weapon"))
+        if (IsValidAttackFor("Weapon Attack"))
         {
             StartCoroutine(FirstAttackCoroutine());
         }
-        else if (IsValidAttackFor("Second Weapon"))
+        else if (IsValidAttackFor("Ability"))
         {
             if (playerInventory.Contains(bow)) { 
                 StartCoroutine(SecondAttackCoroutine());

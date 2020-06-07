@@ -138,7 +138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrust: 1
   knockTime: 0.3
-  damage: 1
+  otherTag: Player
 --- !u!114 &6919661557861801072
 MonoBehaviour:
   m_ObjectHideFlags: 0

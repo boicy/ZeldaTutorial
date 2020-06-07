@@ -56,7 +56,7 @@ public class TreasureChest : Interactable
 
     private bool PlayerInterects()
     {
-        return Input.GetButtonDown("First Weapon") && playerInRange;
+        return Input.GetButtonDown("Weapon Attack") && playerInRange;
     }
 
     private void OpenChest()

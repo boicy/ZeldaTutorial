@@ -437,7 +437,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrust: 2
   knockTime: 0.2
-  damage: 1
+  otherTag: enemies
 --- !u!1 &2745078608068008763
 GameObject:
   m_ObjectHideFlags: 0
@@ -516,7 +516,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrust: 2
   knockTime: 0.2
-  damage: 1
+  otherTag: enemies
 --- !u!1 &2745078608125479887
 GameObject:
   m_ObjectHideFlags: 0
@@ -595,7 +595,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrust: 2
   knockTime: 0.2
-  damage: 1
+  otherTag: enemies
 --- !u!1 &2745078608358886048
 GameObject:
   m_ObjectHideFlags: 0
@@ -863,7 +863,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrust: 2
   knockTime: 0.2
-  damage: 1
+  otherTag: enemies
 --- !u!1 &3866511126592464477
 GameObject:
   m_ObjectHideFlags: 0
