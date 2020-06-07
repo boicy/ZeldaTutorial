@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2067642959078176108}
   - component: {fileID: 2067642959078176111}
   - component: {fileID: 6749729679560936504}
+  - component: {fileID: -8722652890299581384}
   m_Layer: 8
   m_Name: Turret Log
   m_TagString: enemies
@@ -211,7 +212,6 @@ MonoBehaviour:
   maxHealth: {fileID: 11400000, guid: 5bec4214533684524afb9104276f72c6, type: 2}
   health: 2
   enemyName: Teddy Turret
-  baseAttack: 1
   moveSpeed: 1.2
   homePosition: {x: 0, y: 0}
   deathEffect: {fileID: 7596356647243182489, guid: 2882fe018c05448db893a4ad1d25b784,
@@ -227,3 +227,17 @@ MonoBehaviour:
     type: 3}
   fireDelay: 0
   canFire: 1
+--- !u!114 &-8722652890299581384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2067642959078176023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d6116fb69edc4a14a5076ea61ac563e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  otherTag: Player

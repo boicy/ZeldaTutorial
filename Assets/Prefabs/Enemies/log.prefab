@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2002958937608691283}
   - component: {fileID: 2002958937608691282}
   - component: {fileID: 2002958937608691281}
+  - component: {fileID: 8617381611635719857}
   m_Layer: 8
   m_Name: log
   m_TagString: enemies
@@ -170,7 +171,6 @@ MonoBehaviour:
   maxHealth: {fileID: 11400000, guid: 5bec4214533684524afb9104276f72c6, type: 2}
   health: 2
   enemyName: Larry the Log
-  baseAttack: 1
   moveSpeed: 1.5
   homePosition: {x: 0, y: 0}
   deathEffect: {fileID: 7596356647243182489, guid: 2882fe018c05448db893a4ad1d25b784,
@@ -223,3 +223,17 @@ MonoBehaviour:
   thrust: 2
   knockTime: 0.2
   damage: 1
+--- !u!114 &8617381611635719857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2002958937608691241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d6116fb69edc4a14a5076ea61ac563e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  otherTag: Player

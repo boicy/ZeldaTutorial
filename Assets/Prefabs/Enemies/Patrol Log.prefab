@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 4042783015527875976}
   - component: {fileID: 4042783015527875979}
   - component: {fileID: 2363726254092497130}
+  - component: {fileID: 6420282854526883934}
   m_Layer: 8
   m_Name: Patrol Log
   m_TagString: enemies
@@ -211,7 +212,6 @@ MonoBehaviour:
   maxHealth: {fileID: 11400000, guid: 5bec4214533684524afb9104276f72c6, type: 2}
   health: 2
   enemyName: Patrol Log
-  baseAttack: 1
   moveSpeed: 1
   homePosition: {x: 0, y: 0}
   deathEffect: {fileID: 7596356647243182489, guid: 2882fe018c05448db893a4ad1d25b784,
@@ -227,3 +227,17 @@ MonoBehaviour:
   currentPoint: 0
   currentGoal: {fileID: 0}
   roundingDistance: 0
+--- !u!114 &6420282854526883934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4042783015527876083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d6116fb69edc4a14a5076ea61ac563e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  otherTag: Player

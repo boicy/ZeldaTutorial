@@ -26,12 +26,6 @@ public class PlayerMovement : MonoBehaviour {
     public VectorValue startingPosition;
     public float speed;
 
-    /*
-    [Header("Health stats")]
-    public FloatValue currentHealth;
-    public SignalSender playerHealthSignal;
-    */
-
     public SignalSender playerHit;
 
     [Header("Inventory stuff")]
@@ -209,7 +203,7 @@ public class PlayerMovement : MonoBehaviour {
         */
         StartCoroutine(knockCoroutine(knockTime));
     }
-    /*
+    /* TODO what happens when a player dies!
     private void PlayerDies()
     {
         gameObject.SetActive(false);
@@ -235,11 +229,12 @@ public class PlayerMovement : MonoBehaviour {
             myRigidBody.velocity = Vector2.zero;
         }
     }
-
+    //TODO need to fix this as no Trigger Collider to disable now
+    //not sure where to put it, think next video will fix it
     private IEnumerator flashCoroutine()
     {
         int temp = 0;
-        triggerCollider.enabled = false;
+        //triggerCollider.enabled = false;
         while (temp < numberOfFlashes)
         {
             spriteRenderer.color = flashColor;
@@ -248,6 +243,6 @@ public class PlayerMovement : MonoBehaviour {
             yield return new WaitForSeconds(flashDuration);
             temp++;
         }
-        triggerCollider.enabled = true;
+        //triggerCollider.enabled = true;
     }
 }

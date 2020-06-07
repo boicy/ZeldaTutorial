@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 752c2fafb90424bbfbc5604ac4118b99, type: 3}
-  m_Name: General Player Inventory
+  m_Script: {fileID: 11500000, guid: 4b6b10476fc6f4fa4bf7f8cd4ae63f81, type: 3}
+  m_Name: Soldier Sword
   m_EditorClassIdentifier: 
-  myInventory:
-  - {fileID: 0}
+  itemSprite: {fileID: 21300000, guid: ad7422ca3e4a841cabd041b16491e5c3, type: 3}
+  itemDescription: Your Grandfathers Sword
+  isKey: 0

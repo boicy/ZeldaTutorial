@@ -23,7 +23,9 @@ public abstract class Enemy : MonoBehaviour
     public FloatValue maxHealth;
     public float health;
     public string enemyName;
-    public int baseAttack;
+    //TODO remove this
+    //public int baseAttack;
+
     public float moveSpeed;
     public Vector2 homePosition;
 
