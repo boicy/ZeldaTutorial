@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public enum PlayerState {
     walk,
@@ -188,7 +189,7 @@ public class PlayerMovement : MonoBehaviour {
         }
     }
 
-    public void Knock(float knockTime, float damage)
+    public void Knock(float knockTime)
     {   /*
         currentHealth.RuntimeValue -= damage;
         playerHealthSignal.Raise();

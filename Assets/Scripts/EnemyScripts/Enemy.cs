@@ -83,10 +83,9 @@ public abstract class Enemy : MonoBehaviour
         }
     }
 
-    public void Knock(Rigidbody2D myRigidBody, float knockTime, float damage)
+    public void Knock(Rigidbody2D myRigidBody, float knockTime)
     {
         StartCoroutine(knockCoroutine(myRigidBody, knockTime));
-        TakeDamage(damage); 
     }
 
     private IEnumerator knockCoroutine(Rigidbody2D myRigidBody, float knockTime)
@@ -99,8 +98,7 @@ public abstract class Enemy : MonoBehaviour
             myRigidBody.velocity = Vector2.zero;
         }
     }
-
-    //lift up as virtual
+    
     public virtual void CheckDistance()
     {
         if (TheTargetIsInRangeToChase())
