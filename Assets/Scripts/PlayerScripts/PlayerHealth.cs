@@ -13,9 +13,4 @@ public class PlayerHealth : GenericHealth
         maxHealth.RuntimeValue = currentHealth;
         healthSignal.Raise();        
     }
-
-    public override void InstaKill()
-    {
-        base.InstaKill();
-    }
 }

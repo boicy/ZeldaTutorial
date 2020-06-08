@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2067642959078176108}
   - component: {fileID: 2067642959078176111}
   - component: {fileID: 6749729679560936504}
-  - component: {fileID: -8722652890299581384}
+  - component: {fileID: -8519623252266377278}
   m_Layer: 8
   m_Name: Turret Log
   m_TagString: enemies
@@ -225,9 +225,9 @@ MonoBehaviour:
   attackRadius: 1.2
   projectile: {fileID: 6919661557861801071, guid: c1c61de10b2944d12a60f375cd875da5,
     type: 3}
-  fireDelay: 0
+  fireDelay: 0.1
   canFire: 1
---- !u!114 &-8722652890299581384
+--- !u!114 &-8519623252266377278
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -236,8 +236,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 2067642959078176023}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d6116fb69edc4a14a5076ea61ac563e, type: 3}
+  m_Script: {fileID: 11500000, guid: 35b9bcf7e77a1457180d7d0c733fd762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  otherString: Player
   damage: 1
-  otherTag: Player

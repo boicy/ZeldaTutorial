@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5944226624930607681}
   - component: {fileID: 5944226624930607682}
   - component: {fileID: -7416887968906633199}
-  - component: {fileID: 3144791640243539806}
+  - component: {fileID: 3257073218428850127}
   m_Layer: 8
   m_Name: Area Log
   m_TagString: enemies
@@ -224,7 +224,7 @@ MonoBehaviour:
   chaseRadius: 4
   attackRadius: 1.2
   boundary: {fileID: 0}
---- !u!114 &3144791640243539806
+--- !u!114 &3257073218428850127
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -233,8 +233,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 5944226624930607674}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d6116fb69edc4a14a5076ea61ac563e, type: 3}
+  m_Script: {fileID: 11500000, guid: 35b9bcf7e77a1457180d7d0c733fd762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  otherString: Player
   damage: 1
-  otherTag: Player

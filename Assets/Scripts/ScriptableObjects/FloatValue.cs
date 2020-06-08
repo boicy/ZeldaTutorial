@@ -10,6 +10,7 @@ public class FloatValue : ResetableScriptableObject
 
     public override void Reset()
     {
+        Debug.Log(this.name + " is resetting runtime value " + RuntimeValue + " to initial value: " + initialValue);
         RuntimeValue = initialValue;
     }
 }

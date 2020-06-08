@@ -156,6 +156,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c0e7bad68fee045748b05aa10ce2ea96, type: 2}
   - {fileID: 11400000, guid: 1af19748f308a4ab3ae6ac9aba3d62bd, type: 2}
   - {fileID: 11400000, guid: b497fdacbe78c4fffad43fed73f8accb, type: 2}
+  - {fileID: 11400000, guid: 14b80d229e31242f0add8ad94c172751, type: 2}
 --- !u!4 &15994869
 Transform:
   m_ObjectHideFlags: 0
@@ -600,6 +601,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6880d4ce1ffbe40dd936b7dbd49528b5, type: 3}
+--- !u!114 &189512851 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2002958937608691283, guid: dbce40778d287442d9ed55477622d071,
+    type: 3}
+  m_PrefabInstance: {fileID: 1311675896}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e787f3224131f46e7b0abc88b7fea9c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &235839220
 GameObject:
   m_ObjectHideFlags: 0
@@ -56365,12 +56378,12 @@ PrefabInstance:
         type: 3}
       propertyPath: enemies.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2093109073}
     - target: {fileID: 5137047170663423795, guid: 0839c3cd593a04370a0bdc1a84e355f8,
         type: 3}
       propertyPath: enemies.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 189512851}
     - target: {fileID: 5137047170663423795, guid: 0839c3cd593a04370a0bdc1a84e355f8,
         type: 3}
       propertyPath: pots.Array.data[0]
@@ -56781,6 +56794,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2093109073 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2002958937608691283, guid: dbce40778d287442d9ed55477622d071,
+    type: 3}
+  m_PrefabInstance: {fileID: 1273269735}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e787f3224131f46e7b0abc88b7fea9c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2098770511 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2723797807860816692, guid: 358d2a5b204f2472da09bf6826437162,
@@ -57468,7 +57493,7 @@ PrefabInstance:
     - target: {fileID: 1632233761752822403, guid: 77f711a1168de40ee834db1ae75f4820,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.3999939
+      value: 0.39990234
       objectReference: {fileID: 0}
     - target: {fileID: 1632233761752822403, guid: 77f711a1168de40ee834db1ae75f4820,
         type: 3}
@@ -57543,7 +57568,7 @@ PrefabInstance:
     - target: {fileID: 6103711848709219902, guid: 77f711a1168de40ee834db1ae75f4820,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -29.799957
+      value: -29.800049
       objectReference: {fileID: 0}
     - target: {fileID: 6103711848709219902, guid: 77f711a1168de40ee834db1ae75f4820,
         type: 3}
@@ -58702,6 +58727,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 242579163}
     m_Modifications:
+    - target: {fileID: -4801116853404285655, guid: 6074057164a45460b9bcbc6368dbeb0d,
+        type: 3}
+      propertyPath: thrust
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4533912728068754819, guid: 6074057164a45460b9bcbc6368dbeb0d,
         type: 3}
       propertyPath: m_Mass

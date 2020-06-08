@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2002958937608691283}
   - component: {fileID: 2002958937608691282}
   - component: {fileID: 2002958937608691281}
-  - component: {fileID: 8617381611635719857}
+  - component: {fileID: -2577889165383259703}
   m_Layer: 8
   m_Name: log
   m_TagString: enemies
@@ -223,7 +223,7 @@ MonoBehaviour:
   thrust: 2
   knockTime: 0.2
   otherTag: Player
---- !u!114 &8617381611635719857
+--- !u!114 &-2577889165383259703
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -232,8 +232,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 2002958937608691241}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d6116fb69edc4a14a5076ea61ac563e, type: 3}
+  m_Script: {fileID: 11500000, guid: 35b9bcf7e77a1457180d7d0c733fd762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  otherString: Player
   damage: 1
-  otherTag: Player

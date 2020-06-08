@@ -167,8 +167,8 @@ GameObject:
   - component: {fileID: 4533912728068754816}
   - component: {fileID: 4533912728068754817}
   - component: {fileID: 4533912728068754823}
-  - component: {fileID: 6206502756162024712}
   - component: {fileID: -4801116853404285655}
+  - component: {fileID: -174498920733513774}
   m_Layer: 0
   m_Name: Ogre
   m_TagString: Untagged
@@ -364,20 +364,6 @@ MonoBehaviour:
   target: {fileID: 0}
   chaseRadius: 5
   attackRadius: 0.9
---- !u!114 &6206502756162024712
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4533912728068754942}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d6116fb69edc4a14a5076ea61ac563e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 1
-  otherTag: Player
 --- !u!114 &-4801116853404285655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -390,9 +376,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 583dfdb4c610e4bf7b42ddcab7d52162, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrust: 5
+  thrust: 2
   knockTime: 0.2
   otherTag: Player
+--- !u!114 &-174498920733513774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4533912728068754942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35b9bcf7e77a1457180d7d0c733fd762, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  otherString: Player
+  damage: 1
 --- !u!1 &4533912728584746821
 GameObject:
   m_ObjectHideFlags: 0

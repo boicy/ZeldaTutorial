@@ -19,7 +19,14 @@ public class Log : Enemy
     [Header("Target variables")]
     public Transform target;
     public float chaseRadius;
-    public float attackRadius;    
+    public float attackRadius;
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(transform.position, chaseRadius);
+        Gizmos.DrawWireSphere(transform.position, attackRadius);
+
+    }
 
     // Start is called before the first frame update
     void Start()

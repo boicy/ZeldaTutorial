@@ -19,8 +19,7 @@ public class Room : MonoBehaviour
     }
 
     public virtual void PlayerOnEnterTriggerActions(Collider2D other)
-    {
-        //activate all enemies and pots
+    {        
         Array.ForEach(enemies, enemy => enemy.gameObject.SetActive(true));
         Array.ForEach(pots, pot => pot.gameObject.SetActive(true));
         virtualCamera.SetActive(true);

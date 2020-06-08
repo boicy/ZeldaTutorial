@@ -11,11 +11,14 @@ public class TurretEnemy : Log
 
     private void Update()
     {
-        fireDelaySeconds -= Time.deltaTime;
-        if (fireDelaySeconds <= 0)
+        if (canFire == false)
         {
-            canFire = true;
-            fireDelaySeconds = fireDelay;
+            fireDelaySeconds -= Time.deltaTime;
+            if (fireDelaySeconds <= 0)
+            {
+                canFire = true;
+                fireDelaySeconds = fireDelay;
+            }
         }
     }
 
@@ -25,15 +28,8 @@ public class TurretEnemy : Log
         {
             Vector3 launchVector = target.transform.position - transform.position;
             GameObject current = Instantiate(projectile, transform.position, Quaternion.identity);
-
             Projectile projectile1 = current.GetComponent<Projectile>();
-
-            Debug.Log(projectile.activeInHierarchy);
-            Debug.Log(projectile.layer);
-
-
             projectile1.Launch(launchVector);
-
             canFire = false;
             ChangeState(EnemyState.walk);
             anim.SetBool(WAKE_UP, true);
