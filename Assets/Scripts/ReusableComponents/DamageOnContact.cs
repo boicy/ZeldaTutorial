@@ -17,7 +17,7 @@ public class DamageOnContact : MonoBehaviour
             {
                 temp.Damage(damage);
             }
-            Destroy(this.gameObject);
+            //Destroy(this.gameObject);
         }
     }
 }
